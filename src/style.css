@@ -8,7 +8,7 @@
   gap: 10px;
   padding: 29px 26px;
   position: relative;
-  background-image: url(./img/bg.png);
+  background-image: url(../img/bg.png);
   background-size: cover;
   background-position: center center;
   background-attachment: fixed;
