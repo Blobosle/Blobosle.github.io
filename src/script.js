@@ -8,3 +8,11 @@ document.addEventListener("mousemove", function(event) {
         `calc(50% + ${offsetX}px) calc(50% + ${offsetY}px)`;
 });
 
+document.addEventListener('DOMContentLoaded', () => {
+  const firstElement = document.querySelector('.about *');
+  if (firstElement) {
+    firstElement.style.animationDelay = "0ms";
+    firstElement.classList.add('animate-entry');
+  }
+});
+
