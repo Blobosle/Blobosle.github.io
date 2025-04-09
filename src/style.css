@@ -1,3 +1,6 @@
+html, body {
+  overflow: hidden;
+}
 
 .about {
     display: flex;
@@ -12,6 +15,7 @@
     background-size: cover;
     background-position: center center;
     background-attachment: fixed;
+    background-repeat: repeat;
     transition: background-position 0.1s ease;
 }
 
