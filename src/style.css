@@ -219,6 +219,24 @@ html, body {
     white-space: nowrap;
 }
 
+.about .text-wrapper-3,
+.about .text-wrapper-5 {
+    text-shadow: 0 0 10px #fff,
+                 0 0 5px #fff,
+                 0 0 5px #fff;
+
+    animation: glowAnimation 2s ease-out forwards;
+}
+
+@keyframes glowAnimation {
+  from {
+    text-shadow: 0 0 0px #fff, 0 0 0px #fff, 0 0 0px #fff;
+  }
+  to {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff;
+  }
+}
+
 .about .proj {
     position: absolute;
     top: 295px;
