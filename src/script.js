@@ -9,7 +9,7 @@ document.addEventListener("mousemove", function(event) {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
-    const firstElement = document.querySelector('.about *');
+    const firstElement = document.querySelector('.content');
     if (firstElement) {
         firstElement.style.animationDelay = "0ms";
         firstElement.classList.add('animate-entry');

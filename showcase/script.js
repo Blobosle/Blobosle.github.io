@@ -8,3 +8,11 @@ document.addEventListener('mousemove', (e) => {
     overlapWrapper.style.setProperty('--offsetY', `${yOffset}px`);
 });
 
+document.addEventListener('DOMContentLoaded', () => {
+    const content = document.querySelector('.content');
+    if (content) {
+        content.style.animationDelay = "0ms";
+        content.classList.add('animate-entry');
+    }
+});
+
