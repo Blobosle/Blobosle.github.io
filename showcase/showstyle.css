@@ -43,7 +43,7 @@
     height: 883px;
     left: 50%;
     top: 50%;
-    /* transform: translate(-50%, -66%); */
+
     transform: translate(-50%, -66%) scale(0.95);
     transform-origin: center;
     background-color: #ffffff1a;
@@ -116,19 +116,7 @@
 /*     letter-spacing: -1.49px; */
 /*     line-height: 74.6px; */
 /* } */
-/**/
 
-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    background: #121212;
-    font-family: 'Arial', sans-serif;
-}
-
-/* Base styling for the text element */
 .showcase .text-wrapper-2 {
     position: relative;
     width: 614px;
@@ -139,18 +127,16 @@ body {
     text-align: center;
     letter-spacing: -1.49px;
     line-height: 74.6px;
-    /* Add the initial text shadow and animation */
-    text-shadow: 5px 5px 0 #ff005e, 10px 10px 0 #00d4ff;
+    text-shadow: 5px 5px 0 #878787, 10px 10px 0 #525252;
     animation: shadow-dance 15s infinite;
 }
 
-/* Keyframes for the shadow-dance animation */
 @keyframes shadow-dance {
     0%, 100% {
-        text-shadow: 5px 5px 0 #ff005e, 10px 10px 0 #00d4ff;
+        text-shadow: 2px 2px 0 #878787, 5px 5px 0 #525252;
     }
     50% {
-        text-shadow: -5px -5px 0 #00d4ff, -10px -10px 0 #ff005e;
+        text-shadow: 0px 0px 0 #525252, 0px 0px 0 #878787;
     }
 }
 
