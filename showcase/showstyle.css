@@ -213,6 +213,19 @@
     background-color: #ffffff0d;
     border-radius: 20px;
     box-shadow: inset 1px 3px 6px #00000040;
+    /* Transition for smooth animation */
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.showcase .button:hover {
+    /* Scale the button slightly larger */
+    transform: scale(1.1);
+    /* Change background to a slightly brighter shade */
+    background-color: #ffffff1a;
+    /* Adjust shadow for a more pronounced lifting effect */
+    box-shadow:
+        inset 1px 3px 6px #00000020,
+        0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 .showcase .arrow-right-up {
@@ -702,8 +715,8 @@
 
 .showcase .text-wrapper-13 {
     position: absolute;
-    width: 192px;
-    top: 0;
+    width: 190px;
+    top: 10px;
     left: 7px;
     font-family: "Albert Sans", sans-serif;
     font-weight: 500;
@@ -726,6 +739,20 @@
     position: absolute;
     top: 85px;
     left: 25px;
+    font-family: "Instrument Sans", sans-serif;
+    font-weight: 500;
+    color: #7a7f86;
+    font-size: 15px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+}
+
+.showcase .published-march {
+    position: absolute;
+    top: 90px;
+    left: 22px;
     font-family: "Instrument Sans", sans-serif;
     font-weight: 500;
     color: #7a7f86;
@@ -805,7 +832,7 @@
 .showcase .text-wrapper-15 {
     position: absolute;
     width: 280px;
-    top: 111px;
+    top: 117px;
     left: 27px;
     font-family: "Albert Sans", sans-serif;
     font-weight: 500;
