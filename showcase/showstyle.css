@@ -105,6 +105,30 @@
     line-height: normal;
 }
 
+/* .showcase .text-wrapper-2 { */
+/*     position: relative; */
+/*     width: 614px; */
+/*     font-family: "Albert Sans", sans-serif; */
+/*     font-weight: 700; */
+/*     color: #ffffff; */
+/*     font-size: 48px; */
+/*     text-align: center; */
+/*     letter-spacing: -1.49px; */
+/*     line-height: 74.6px; */
+/* } */
+/**/
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: #121212;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Base styling for the text element */
 .showcase .text-wrapper-2 {
     position: relative;
     width: 614px;
@@ -115,6 +139,19 @@
     text-align: center;
     letter-spacing: -1.49px;
     line-height: 74.6px;
+    /* Add the initial text shadow and animation */
+    text-shadow: 5px 5px 0 #ff005e, 10px 10px 0 #00d4ff;
+    animation: shadow-dance 15s infinite;
+}
+
+/* Keyframes for the shadow-dance animation */
+@keyframes shadow-dance {
+    0%, 100% {
+        text-shadow: 5px 5px 0 #ff005e, 10px 10px 0 #00d4ff;
+    }
+    50% {
+        text-shadow: -5px -5px 0 #00d4ff, -10px -10px 0 #ff005e;
+    }
 }
 
 .showcase .actions {
