@@ -128,7 +128,7 @@
     letter-spacing: -1.49px;
     line-height: 74.6px;
     text-shadow: 5px 5px 0 #878787, 10px 10px 0 #525252;
-    animation: shadow-dance 15s infinite;
+    animation: shadow-dance 5s infinite;
 }
 
 @keyframes shadow-dance {
