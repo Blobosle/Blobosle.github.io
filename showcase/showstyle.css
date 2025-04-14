@@ -213,6 +213,7 @@
     text-align: center;
     letter-spacing: 0;
     line-height: normal;
+    pointer-events: none;
 }
 
 .showcase .target-area {
@@ -784,6 +785,7 @@
     letter-spacing: 0;
     line-height: normal;
     white-space: nowrap;
+    pointer-events: none;
 }
 
 .showcase .macos-neovim {
@@ -793,6 +795,26 @@
     top: 154px;
     left: 636px;
 }
+
+.rectangle,
+.rectangle-2,
+.rectangle-3,
+.rectangle-mintex,
+.rectangle-games,
+.rectangle-macos {
+  transition: transform 0.2s ease;
+  transform-origin: center;
+}
+
+.hover-parent:hover .rectangle,
+.hover-parent:hover .rectangle-2,
+.hover-parent:hover .rectangle-3,
+.hover-parent:hover .rectangle-mintex,
+.hover-parent:hover .rectangle-macos,
+.hover-parent:hover .rectangle-games {
+  transform: scale(1.03);
+}
+
 
 .showcase .overlap-group-4 {
     position: absolute;
@@ -814,6 +836,7 @@
     letter-spacing: 0;
     line-height: 34px;
     white-space: nowrap;
+    pointer-events: none;
 }
 
 .showcase .neovim-mark-svg {
@@ -823,6 +846,7 @@
     top: 53px;
     left: 21px;
     object-fit: cover;
+    pointer-events: none;
 }
 
 .showcase .tile-5 {
