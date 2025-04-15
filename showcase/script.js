@@ -11,7 +11,7 @@ document.addEventListener('mousemove', (e) => {
 document.addEventListener('DOMContentLoaded', () => {
     const content = document.querySelector('.content');
     if (content) {
-        content.style.animationDelay = "0ms";
+        content.classList.remove('pre-animation');
         content.classList.add('animate-entry');
     }
 });
