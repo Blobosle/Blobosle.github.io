@@ -1073,6 +1073,7 @@ img {
     top: 63px;
     left: 384px;
     object-fit: cover;
+    border-radius: 15px
 }
 
 .showcase .authored-a-technical {
