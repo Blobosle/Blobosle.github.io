@@ -267,12 +267,21 @@ html, body {
     transform: translateX(4px);
 }
 
-.about .daco {
+/* .about .daco {
     position: absolute;
     width: 254px;
     height: 632px;
     top: 67px;
     left: 521px;
+    object-fit: cover;
+} */
+
+.about .daco {
+    position: absolute;
+    width: 254px;
+    height: 670px;
+    top: 29px;
+    left: 510px;
     object-fit: cover;
 }
 
