@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <!-- FLAG -->
+        <!-- NEW -->
         <meta charset="utf-8" />
         <title>Benjamin Lobos Lertpunyaroj</title>
         <meta name="description" content="Showcase of projects, plugins, publications, and more by Benjamin Lobos Lertpunyaroj." />
@@ -32,9 +32,6 @@
                                         <div class="proj">Resume</div>
                                     </a>
 
-                                    <!-- <a href="../landing/"> -->
-                                    <!--     <div class="proj">Home</div> -->
-                                    <!-- </a> -->
                                 </div>
                                 <nav class="actions"></nav>
                             </header>
@@ -273,32 +270,97 @@
                 <!-- End .overlap-wrapper -->
             </main>
 
+            <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
             <script>
-                (function() {
+                ;(function() {
                     const DASH = document.querySelector('.dashboard');
                     const W    = 1372, H = 883;
-                    const descalingFactor = 0.07;
-                    const verticalShiftPx = 120;
 
-                    DASH.style.position         = 'absolute';
-                    DASH.style.left             = '50%';
-                    DASH.style.top              = '50%';
-                    DASH.style.transformOrigin  = '650px 10px';
+                    // how much “inset” you want as a fraction of viewport before scaling
+                    const PADDING_FRACTION = 0.07;
 
-                    function rescale() {
-                        const sx = window.innerWidth  / W;
-                        const sy = window.innerHeight / H;
-                        const s  = Math.min(sx, sy) - descalingFactor;
+                    // default vertical offset (px) *above* exact center
+                    const DEFAULT_SHIFT_PX = 135;
+                    // on really small viewports shrink that offset
+                    const SMALL_SCREEN_BREAK = 600; // px
+                    const SMALL_SHIFT_PX      = 60;
 
-                        DASH.style.transform =
-                            `translate(-50%, calc(-50% - ${verticalShiftPx}px)) ` +
-                            `scale(${s})`;
+                    // center the pivot point
+                    DASH.style.position        = 'absolute';
+                    DASH.style.left            = '50%';
+                    DASH.style.top             = '50%';
+                    DASH.style.transformOrigin = 'center center';
+
+                    // simple debounce helper
+                    function debounce(fn, delay=100) {
+                        let tid;
+                        return () => {
+                            clearTimeout(tid);
+                            tid = setTimeout(fn, delay);
+                        };
                     }
 
-                    window.addEventListener('resize', rescale);
+                    function rescale() {
+                        const vw = window.innerWidth;
+                        const vh = window.innerHeight;
+
+                        // raw scale factors
+                        const sx = vw / W;
+                        const sy = vh / H;
+                        // pick smaller so nothing overflows
+                        let s = Math.min(sx, sy);
+                        // subtract a little padding so edge isn’t flush
+                        s = s - PADDING_FRACTION;
+                        // clamp so you never go <0.2 or >1
+                        s = Math.max(0.2, Math.min(s, 1));
+
+                        // pick vertical shift based on screen width
+                        const shiftPx = (vw < SMALL_SCREEN_BREAK)
+                            ? SMALL_SHIFT_PX
+                            : DEFAULT_SHIFT_PX;
+
+                        // 1) move its center to viewport center
+                        // 2) pull it up by shiftPx
+                        // 3) uniformly scale by s
+                        DASH.style.transform =
+                            `translate(-50%, calc(-50% - ${shiftPx}px)) scale(${s})`;
+                    }
+
+                    const update = debounce(rescale, 50);
+                    window.addEventListener('resize',     update);
+                    window.addEventListener('orientationchange', update);
+                    document.addEventListener('DOMContentLoaded', rescale);
                     rescale();
                 })();
             </script>
+
+            <!-- <script> -->
+            <!--     (function() { -->
+            <!--         const DASH = document.querySelector('.dashboard'); -->
+            <!--         const W    = 1372, H = 883; -->
+            <!--         const descalingFactor = 0.07; -->
+            <!--         const verticalShiftPx = 120; -->
+            <!---->
+            <!--         DASH.style.position         = 'absolute'; -->
+            <!--         DASH.style.left             = '50%'; -->
+            <!--         DASH.style.top              = '50%'; -->
+            <!--         DASH.style.transformOrigin  = '650px 10px'; -->
+            <!---->
+            <!--         function rescale() { -->
+            <!--             const sx = window.innerWidth  / W; -->
+            <!--             const sy = window.innerHeight / H; -->
+            <!--             const s  = Math.min(sx, sy) - descalingFactor; -->
+            <!---->
+            <!--             DASH.style.transform = -->
+            <!--                 `translate(-50%, calc(-50% - ${verticalShiftPx}px)) ` + -->
+            <!--                 `scale(${s})`; -->
+            <!--         } -->
+            <!---->
+            <!--         window.addEventListener('resize', rescale); -->
+            <!--         rescale(); -->
+            <!--     })(); -->
+            <!-- </script> -->
             <!-- JavaScript -->
             <script src="./script.js"></script>
         </body>
