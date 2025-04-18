@@ -26,6 +26,7 @@ img {
 /* -------------------- */
 /* SHOWCASE LAYOUT      */
 /* -------------------- */
+
 .showcase {
     background-color: transparent;
     display: flex;
@@ -92,33 +93,31 @@ img {
 /* DASHBOARD            */
 /* -------------------- */
 
-/* .showcase .dashboard {
+.dashboard‐wrapper {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.dashboard {
+  width: 1372px;
+  height: 883px;
+  transform-origin: center center;
+  transform: scale(min(calc(100vw / 1372), calc(100vh / 883)));
+}
+
+
+.showcase .dashboard {
     position: absolute;
     width: 1372px;
     height: 883px;
     left: 50%;
-    top: 50%;
+    top: 65%;
     transform: translate(-50%, -66%) scale(0.95);
     transform-origin: center;
-    background-color: #ffffff1a;
-    border-radius: 56px;
-    overflow: hidden;
-    border: none;
-    box-shadow: var(--effect-glass-primary);
-    backdrop-filter: blur(30px) brightness(100%);
-    -webkit-backdrop-filter: blur(30px) brightness(100%);
-}
-*/
-
-.showcase .dashboard {
-    position: absolute;
-    top: 50%;
-    left: 50px;
-    right: 50px;
-    height: 883px;
-    transform: translateY(-66%) scale(0.95);
-    transform-origin: center;
-    max-width: 1372px;
     background-color: #ffffff1a;
     border-radius: 56px;
     overflow: hidden;
