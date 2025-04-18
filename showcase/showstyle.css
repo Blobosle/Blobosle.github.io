@@ -93,31 +93,30 @@ img {
 /* DASHBOARD            */
 /* -------------------- */
 
-.dashboard‐wrapper {
-    position: fixed;
-    inset: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-}
-
-.dashboard {
-  width: 1372px;
-  height: 883px;
-  transform-origin: center center;
-  transform: scale(min(calc(100vw / 1372), calc(100vh / 883)));
-}
-
+/* .dashboard‐wrapper { */
+/*     position: fixed; */
+/*     inset: 0; */
+/*     display: flex; */
+/*     align-items: center; */
+/*     justify-content: center; */
+/*     overflow: hidden; */
+/* } */
+/**/
+/* .dashboard { */
+/*   width: 1372px; */
+/*   height: 883px; */
+/*   transform-origin: center center; */
+/*   transform: scale(min(calc(100vw / 1368), calc(100vh / 880))); */
+/* } */
 
 .showcase .dashboard {
     position: absolute;
     width: 1372px;
     height: 883px;
-    left: 50%;
-    top: 65%;
-    transform: translate(-50%, -66%) scale(0.95);
-    transform-origin: center;
+    left: 50px;
+    top: 100px;
+    /* transform: translate(-50%, -66%) scale(0.95); */
+    /* transform-origin: 1000px 0px; */
     background-color: #ffffff1a;
     border-radius: 56px;
     overflow: hidden;
