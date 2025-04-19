@@ -1,19 +1,18 @@
 @import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+
 * {
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
 }
+
 html,
 body {
   margin: 0px;
   height: 100%;
 }
-/* a blue color as a generic focus style */
-button:focus-visible {
-  outline: 2px solid #4a90e2 !important;
-  outline: -webkit-focus-ring-color auto 5px !important;
-}
-a {
-  text-decoration: none;
-}
 
+:root {
+  --surfacesurface-100: rgba(255, 255, 255, 1);
+  --effect-glass-primary: 0px 20px 25px 0px rgba(0, 0, 0, 0.25);
+  --variable-collection-color: rgba(255, 255, 255, 1);
+}

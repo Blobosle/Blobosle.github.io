@@ -1,28 +1,3 @@
-html, body {
-    margin: 0;
-    padding: 0;
-    font-family: sans-serif;
-}
-
-*,
-*::before,
-*::after {
-    box-sizing: border-box;
-}
-
-/* Ensures images are responsive and never overflow their container */
-img {
-    display: block;
-    max-width: 100%;
-    height: auto;
-}
-
-/* You can customize these variables if you use them in your HTML */
-:root {
-    --effect-glass-primary: 0px 20px 25px rgba(0, 0, 0, 0.1);
-    --surfacesurface-100: #ffffff;
-}
-
 /* -------------------- */
 /* SHOWCASE LAYOUT      */
 /* -------------------- */
@@ -35,7 +10,7 @@ img {
     width: 100%;
 }
 
-.showcase .overlap-wrapper {
+.showcase .bg {
     position: relative;
     overflow: hidden;
     width: 100vw;
@@ -44,7 +19,7 @@ img {
     --offsetY: 0px;
 }
 
-.showcase .overlap-wrapper::before {
+.showcase .bg::before {
     content: "";
     position: absolute;
     top: 50%;
@@ -54,60 +29,21 @@ img {
     background-image: url(./img/showcaseBG.png);
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;
+    background-repeat: repeat;
     transform: translate(calc(-50% + var(--offsetX)), calc(-50% + var(--offsetY)));
     transition: transform 0.1s ease-out;
 }
 
-.showcase .overlap {
+.showcase .bg-darkener {
     position: relative;
-    /* Instead of fixed px, you might consider min-height or responsive units. */
     height: 1179px;
     background-image: url(./img/deem.png);
     background-size: 100% 100%;
 }
 
-.showcase .proj {
-    position: absolute;
-    top: 40px;
-    left: 1160px;
-    font-family: "Albert Sans", sans-serif;
-    font-weight: 700;
-    color: var(--surfacesurface-100);
-    opacity: 0.4;
-    font-size: 25px;
-    letter-spacing: 0;
-    line-height: 20px;
-    white-space: nowrap;
-    cursor: pointer;
-    display: inline-block;
-    transition: color 0.1s ease-in-out, opacity 0.1s ease-in-out;
-}
-
-.showcase .proj:hover {
-    color: #fff;
-    opacity: 1;
-}
-
 /* -------------------- */
 /* DASHBOARD            */
 /* -------------------- */
-
-/* .dashboard‐wrapper { */
-/*     position: fixed; */
-/*     inset: 0; */
-/*     display: flex; */
-/*     align-items: center; */
-/*     justify-content: center; */
-/*     overflow: hidden; */
-/* } */
-/**/
-/* .dashboard { */
-/*   width: 1372px; */
-/*   height: 883px; */
-/*   transform-origin: center center; */
-/*   transform: scale(min(calc(100vw / 1368), calc(100vh / 880))); */
-/* } */
 
 .showcase .dashboard {
     position: absolute;
@@ -148,6 +84,41 @@ img {
 /* -------------------- */
 /* HEADER               */
 /* -------------------- */
+
+.showcase .date {
+    position: absolute;
+    width: 218px;
+    top: 102px;
+    font-family: "Instrument Sans", sans-serif;
+    font-weight: 500;
+    color: #7a7f86;
+    font-size: 15px;
+    text-align: center;
+    line-height: normal;
+}
+
+.showcase .resume {
+    position: absolute;
+    top: 40px;
+    left: 1160px;
+    font-family: "Albert Sans", sans-serif;
+    font-weight: 700;
+    color: var(--surfacesurface-100);
+    opacity: 0.4;
+    font-size: 25px;
+    letter-spacing: 0;
+    line-height: 20px;
+    white-space: nowrap;
+    cursor: pointer;
+    display: inline-block;
+    transition: color 0.1s ease-in-out, opacity 0.1s ease-in-out;
+}
+
+.showcase .resume:hover {
+    color: #fff;
+    opacity: 1;
+}
+
 .showcase .header {
     display: flex;
     width: 1285px;
@@ -166,7 +137,7 @@ img {
     flex: 0 0 auto;
 }
 
-.showcase .text-wrapper {
+.showcase .title-secondary {
     position: relative;
     width: fit-content;
     margin-top: -1px; /* minor fix */
@@ -178,7 +149,7 @@ img {
     line-height: normal;
 }
 
-.showcase .text-wrapper-2 {
+.showcase .title-main {
     position: relative;
     width: 614px;
     font-family: "Albert Sans", sans-serif;
@@ -201,14 +172,10 @@ img {
     }
 }
 
-.showcase .actions {
-    position: relative;
-    flex: 0 0 auto;
-}
-
 /* -------------------- */
 /* WEBSITE SECTION      */
 /* -------------------- */
+
 .showcase .website {
     position: absolute;
     width: 300px;
@@ -217,13 +184,7 @@ img {
     left: 1px;
 }
 
-.showcase .overlap-group {
-    position: relative;
-    width: 294px;
-    height: 336px;
-}
-
-.showcase .rectangle {
+.showcase .rectangle-website {
     position: absolute;
     width: 257px;
     height: 336px;
@@ -243,17 +204,10 @@ img {
     );
 }
 
-.showcase .published-april {
-    position: absolute;
-    width: 218px;
-    top: 102px;
+
+
+.showcase .pub-website {
     left: 32px;
-    font-family: "Instrument Sans", sans-serif;
-    font-weight: 500;
-    color: #7a7f86;
-    font-size: 15px;
-    text-align: center;
-    line-height: normal;
 }
 
 .showcase .header-2 {
@@ -437,13 +391,6 @@ img {
     left: 311px;
 }
 
-.showcase .overlap-2 {
-    position: relative;
-    width: 280px;
-    height: 336px;
-    border-radius: 20px;
-}
-
 .showcase .overlap-group-2 {
     position: absolute;
     width: 274px;
@@ -524,17 +471,8 @@ img {
     line-height: normal;
 }
 
-.showcase .published-february {
-    position: absolute;
-    width: 218px;
-    top: 102px;
+.showcase .pub-mintex {
     left: 15px;
-    font-family: "Instrument Sans", sans-serif;
-    font-weight: 500;
-    color: #7a7f86;
-    font-size: 15px;
-    text-align: center;
-    line-height: normal;
 }
 
 /* -------------------- */
@@ -546,12 +484,6 @@ img {
     height: 336px;
     top: 511px;
     left: 610px;
-}
-
-.showcase .overlap-3 {
-    position: relative;
-    width: 711px;
-    height: 336px;
 }
 
 .showcase .rectangle-2 {
@@ -586,17 +518,8 @@ img {
     object-fit: cover;
 }
 
-.showcase .published-january {
-    position: absolute;
-    width: 218px;
-    top: 102px;
+.showcase .pub-iterm {
     left: 10px;
-    font-family: "Instrument Sans", sans-serif;
-    font-weight: 500;
-    color: #7a7f86;
-    font-size: 15px;
-    text-align: center;
-    line-height: normal;
 }
 
 .showcase .header-4 {
@@ -812,34 +735,17 @@ img {
     object-fit: cover;
 }
 
-.showcase .published-june {
-    position: absolute;
+.showcase .pub-pg {
     top: 90px;
-    left: 25px;
-    font-family: "Instrument Sans", sans-serif;
-    font-weight: 500;
-    color: #7a7f86;
-    font-size: 15px;
-    text-align: center;
-    line-height: normal;
-    white-space: nowrap;
+    left: 0px;
 }
 
 /* -------------------- */
 /* MACOS NEOVIM         */
 /* -------------------- */
-.showcase .published-march {
-    position: absolute;
+.showcase .pub-macos {
     top: 95px;
-    left: 22px;
-    font-family: "Instrument Sans", sans-serif;
-    font-weight: 500;
-    color: #7a7f86;
-    font-size: 15px;
-    text-align: center;
-    line-height: normal;
-    white-space: nowrap;
-    pointer-events: none;
+    left: 3px;
 }
 
 .showcase .macos-neovim {
@@ -1030,17 +936,9 @@ img {
     );
 }
 
-.showcase .published-september {
-    position: absolute;
+.showcase .pub-book {
     top: 105px;
-    left: 26px;
-    font-family: "Instrument Sans", sans-serif;
-    font-weight: 500;
-    color: #7a7f86;
-    font-size: 15px;
-    text-align: center;
-    line-height: normal;
-    white-space: nowrap;
+    left: 23px;
 }
 
 .showcase .header-6 {
@@ -1102,7 +1000,7 @@ img {
 /* HOVER ANIMATION      */
 /* -------------------- */
 /* Slight 3D scale on hover for the 'rectangle' elements. */
-.rectangle,
+.rectangle-website,
 .rectangle-2,
 .rectangle-3,
 .rectangle-mintex,
@@ -1112,7 +1010,7 @@ img {
     transform-origin: center;
 }
 
-.hover-parent:hover .rectangle,
+.hover-parent:hover .rectangle-website,
 .hover-parent:hover .rectangle-2,
 .hover-parent:hover .rectangle-3,
 .hover-parent:hover .rectangle-mintex,
