@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    <head>
+        <meta name="author" content="Benjamin Lobos Lertpunyaroj" />
+        <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+        <meta name="description" content="Programming in C Course Content" />
+        <meta name="keywords" content="purdue cs240, cs, 240, 24000, C, programming, programming in C, pointers, trees, linked lists" />
+
+        <link rel="stylesheet" href="./images/style.css" type="text/css" />
+        <link rel="icon" href="favicon.ico" type="image/x-icon" />
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+        <title>CS 240 - Programming in C - Spring 2025</title>
+    </head>
+    <body>
+        <div class="content">
+            <div class="preheader">
+                <div class="padding">
+                    I am a mandalore wannabe :/
+                </div>
+            </div>
+
+            <div class="header">
+                <div class="title"><a href="./" style="color: white; text-decoration: none;">CS 240 - Programming in C</a></div>
+                <div class="slogan">Underground Study Guide</div>
+                <img style="float: right; margin-right: 75px; margin-top: -50px;" src="./images/cs.png" />
+            </div>
+
+            <div class="main_content">
+
+                <div class="sd">
+                    <div class="text_padding">
+
+                        <h2>About</h2>
+                        <p>Welcome to the CS 240 Underground Study Guide! This website provides resources to West Lafayette Purdue University students for adquiring and refining C programming & UNIX related topics.<br /><br />If you are not affiliated with CS 240 you are not allowed to use the resources shown in this website.</p>
+                        <p class="date"></p>
+                        <div class="row"><div class="column">
+                                <h2>Course Resources</h2>
+                                <ul>
+                                    <li><a href="./docs/syllabus.pwl.pdf">Syllabus</a></li>
+                                    <li><a href="./docs/codestandard.pwl.pdf">Code Standard</a></li>
+                                    <li><a href="./docs/bgc.pdf">Beej's Guide to C Programming</a></li>
+                                    <li><a href="./docs/template.pdf">Quiz Template</a></li>
+                                    <li><a href="https://edstem.org/us/join/nRphkc">Ed Discussion (S2025)</a></li>
+                                    <li><a href="./docs/gdb-tutorial.pdf">GDB Tutorial</a></li>
+                                </ul>
+                            </div><div class="column">
+                                <h2>Student Resources</h2>
+                                <ul>
+                                    <li><a href="https://www.amazon.com/Programming-Language-2nd-Brian-Kernighan/dp/0131103628">The C Programming Language (K&R)</a></li>
+                                    <li><a href="https://turkeyland.net/projects/overflow/intro.php">Buffer Overflows & You</a></li>
+                                    <li><a href="https://web.archive.org/web/20110604141506/http://www.ualberta.ca/CNS/RESEARCH/LinuxClusters/mem.html">Understanding Memory</a></li>
+                                    <li><a href="https://www.youtube.com/watch?v=H4SDPLiUnv4">Overview on Syscalls</a></li>
+                                    <li><a href="https://gcc.gnu.org/onlinedocs/gcc-3.2/gcc/Optimize-Options.html">GCC Optimization Flags</a></li>
+                                    <li><a href="https://valgrind.org/docs/manual/quick-start.html">Valgrind Quick Start Guide</a></li>
+                                    <li><a href="https://www.youtube.com/watch?v=nfRxGE1Tk0M">Vim Week (Kian Kasad)</a></li>
+                                </ul>
+                            </div></div>
+                            <div style="clear: both;"></div>
+                            <p class="date"></p>
+
+                            <h2>Course Progression</h2>
+
+                            <h3>Jeffrey A. Turkstra <i>(S2025)</i> & Christopher K. May <i>(F2024)</i></h3>
+                            <table border=1>
+                                <thead><tr>
+                                        <th class="tdate">Week</th>
+                                        <th class="class">Class</th>
+                                        <th class="assignments">Exams</th>
+                                    </tr></thead>
+                                    <tbody><tr>
+                                            <td>Week 1</td>
+                                            <td>Lecture 1 - Course Introduction<br />
+                                            <a href="lectures.pwl/LEC-01.pdf">Color</a>, <a href="lectures.pwl/LEC-01-BWN.pdf">B&W Handout</a>, <a href="may.pwl/LEC-01.pdf">Alternate</a></td>
+                                        <td></td>
+                                        </tr><tr>
+
+                                            <td></td>
+                                            <td>Lecture 2 - Compiling, Object Files, Linking, and Execution<br />
+                                                <a href="lectures.pwl/LEC-02.pdf">Color</a>, <a href="lectures.pwl/LEC-02-BWN.pdf">B&W Handout</a>, <a href="may.pwl/LEC-02.pdf">Alternate</a></td>
+                                            <td></td>
+                                        </tr><tr>
+
+                                            <td>Week 2</td>
+                                            <td>Lecture 3 - File I/O<br />
+                                                <a href="lectures.pwl/LEC-03.pdf">Color</a>, <a href="lectures.pwl/LEC-03-BWN.pdf">B&W Handout</a>, <a href="may.pwl/LEC-03.pdf">Alternate</a></td>
+                                            <td></td>
+                                        </tr><tr>
+
+                                            <td>Week 3</td>
+                                            <td>Lecture 4 - More on File I/O<br />
+                                                <a href="lectures.pwl/LEC-04.pdf">Color</a>, <a href="lectures.pwl/LEC-04-BWN.pdf">B&W Handout</a>, <a href="may.pwl/LEC-04.pdf">Alternate</a></td>
+                                            <td></td>
+                                        </tr><tr>
+
+                                            <td></td>
+                                            <td>Lecture 5 - The assert() Macro, Random-access File I/O, typedef, Structures<br />
+                                                <a href="lectures.pwl/LEC-05.pdf">Color</a>, <a href="lectures.pwl/LEC-05-BWN.pdf">B&W Handout</a>, <a href="may.pwl/LEC-05.pdf">Alternate</a></td>
+                                            <td></td>
+                                        </tr><tr>
+
+                                            <td>Week 4</td>
+                                            <td>Lecture 6 - More Structures, Declaration vs. Definition, String Functions<br />
+                                                <a href="lectures.pwl/LEC-06.pdf">Color</a>, <a href="lectures.pwl/LEC-06-BWN.pdf">B&W Handout</a>, <a href="may.pwl/LEC-06.pdf">Alternate</a></td>
+                                            <td></td>
+
+                                        </tr><tr>
+                                            <td></td>
+                                            <td>Lecture 7 - Arrays, Memory Layout of Data<br />
+                                                <a href="lectures.pwl/LEC-07.pdf">Color</a>, <a href="lectures.pwl/LEC-07-BWN.pdf">B&W Handout</a>, <a href="may.pwl/LEC-07.pdf">Alternate</a></td>
+                                            <td></td>
+
+                                        </tr><tr>
+                                            <td>Week 5</td>
+                                            <td>Lecture 8 - Memory Layout of Data, Padding, Binary File I/O<br />
+                                                <a href="lectures.pwl/LEC-08.pdf">Color</a>, <a href="lectures.pwl/LEC-08-BWN.pdf">B&W Handout</a>, <a href="may.pwl/LEC-08.pdf">Alternate</a></td>
+                                            <td></td>
+
+                                        </tr><tr>
+                                            <td></td>
+                                            <td>Lecture 9 - Bitfields, Unions, and Enums; Endianness and Bitwise Operations<br />
+                                                <a href="lectures.pwl/LEC-09.pdf">Color</a>, <a href="lectures.pwl/LEC-09-BWN.pdf">B&W Handout</a>, <a href="may.pwl/LEC-09.pdf">Alternate</a></td>
+                                            <td></td>
+
+                                        </tr><tr>
+                                            <td>Week 6</td>
+                                            <td>Lecture 10 - Introduction to Pointers<br />
+                                                <a href="lectures.pwl/LEC-10.pdf">Color</a>, <a href="lectures.pwl/LEC-10-BWN.pdf">B&W Handout</a>, <a href="may.pwl/LEC-10.pdf">Alternate</a></td>
+                                            <td></td>
+
+                                        </tr><tr>
+                                            <td></td>
+                                            <td>Lecture 11 - More Pointers, Debugging Introduction<br />
+                                                <a href="lectures.pwl/LEC-11.pdf">Color</a>, <a href="lectures.pwl/LEC-11-BWN.pdf">B&W Handout</a>, <a href="may.pwl/LEC-11.pdf">Alternate</a></td>
+                                            <td></td>
+
+                                        </tr><tr>
+                                            <td>Week 7</td>
+                                            <td>Lecture 12 - Midterm 1 Review, malloc() and free()<br />
+                                                <a href="lectures.pwl/LEC-12.pdf">Color</a>, <a href="lectures.pwl/LEC-12-BWN.pdf">B&W Handout</a>, <a href="may.pwl/LEC-12.pdf">Alternate</a></td>
+                                            <td></td>
+
+                                        </tr><tr>
+                                            <td>Week 8</td>
+                                            <td>Lecture 13 - Linked Lists<br />
+                                                <a href="lectures.pwl/LEC-13.pdf">Color</a>, <a href="lectures.pwl/LEC-13-BWN.pdf">B&W Handout</a>, <a href="may.pwl/LEC-13.pdf">Alternate</a></td>
+                                            <td>
+                                                Midterm Exam 1<br />
+                                                Duration: 2 Hours<br />
+                                                <a target="_blank" href="./exams/midterm1-f18.pdf">Fall 2018</a><br />
+                                                <a target="_blank" href="./exams/midterm1-s25prac.pdf">Spring 2025 Practice</a><br />
+                                                <a target="_blank" href="./exams/midterm1-qs.pdf">Practice Questions</a><br />
+                                            </td>
+
+                                        </tr><tr>
+                                            <td></td>
+                                            <td>Lecture 14 - Doubly-Linked Lists and Pointers to Pointers<br />
+                                                <a href="lectures.pwl/LEC-14.pdf">Color</a>, <a href="lectures.pwl/LEC-14-BWN.pdf">B&W Handout</a>, <a href="may.pwl/LEC-14.pdf">Alternate</a></td>
+                                            <td></td>
+
+                                        </tr><tr>
+                                            <td>Week 9</td>
+                                            <td>Lecture 15 - Pointers to Pointers, Many Faces of Zero, Pointers to Functions<br />
+                                                <a href="lectures.pwl/LEC-15.pdf">Color</a>, <a href="lectures.pwl/LEC-15-BWN.pdf">B&W Handout</a>, <a href="may.pwl/LEC-15.pdf">Alternate</a></td>
+                                            <td></td>
+
+                                        </tr><tr>
+                                            <td></td>
+                                            <td>Lecture 16 - Pointers to Functions, Recursion<br />
+                                                <a href="lectures.pwl/LEC-16.pdf">Color</a>, <a href="lectures.pwl/LEC-16-BWN.pdf">B&W Handout</a>, <a href="may.pwl/LEC-16.pdf">Alternate</a></td>
+                                            <td></td>
+
+                                        </tr><tr>
+                                            <td>Week 11</td>
+                                            <td>Lecture 17 - Trees, Dynamic 2D Arrays<br />
+                                                <a href="lectures.pwl/LEC-17.pdf">Color</a>, <a href="lectures.pwl/LEC-17-BWN.pdf">B&W Handout</a>, <a href="may.pwl/LEC-17.pdf">Alternate</a></td>
+                                            <td></td>
+
+                                        </tr><tr>
+                                            <td></td>
+                                            <td>Lecture 18 - Types, Type Qualifiers, Storage Classes, C Preprocessor<br />
+                                                <a href="lectures.pwl/LEC-18.pdf">Color</a>, <a href="lectures.pwl/LEC-18-BWN.pdf">B&W Handout</a>, <a href="may.pwl/LEC-18.pdf">Alternate</a></td>
+                                            <td></td>
+
+                                        </tr><tr>
+                                            <td>Week 12</td>
+                                            <td>Lecture 19 - The C Preprocessor, Casts, Void, and Callbacks<br />
+                                                <a href="lectures.pwl/LEC-19.pdf">Color</a>, <a href="lectures.pwl/LEC-19-BWN.pdf">B&W Handout</a>, <a href="may.pwl/LEC-19.pdf">Alternate</a></td>
+                                            <td></td>
+
+                                        </tr><tr>
+                                            <td></td>
+                                            <td>Lecture 20 - void *, Callbacks, and Midterm 2 Review<br />
+                                                <a href="lectures.pwl/LEC-20.pdf">Color</a>, <a href="lectures.pwl/LEC-20-BWN.pdf">B&W Handout</a>, <a href="may.pwl/LEC-20.pdf">Alternate</a></td>
+                                            <td></td>
+
+                                        </tr><tr>
+                                            <td>Week 13</td>
+                                            <td>Lecture 21 - Callbacks Wrap-up, Libraries, Large-scale Development<br />
+                                                <a href="lectures.pwl/LEC-21.pdf">Color</a>, <a href="lectures.pwl/LEC-21-BWN.pdf">B&W Handout</a>, <a href="may.pwl/LEC-21.pdf">Alternate</a></td>
+                                            <td>
+                                                Midterm Exam 2<br />
+                                                Duration: 2 Hours<br />
+                                                <a target="_blank" href="./exams/midterm2-f18.pdf">Fall 2018</a><br />
+                                                <a target="_blank" href="./exams/midterm2-s25prac.pdf">Spring 2025 Practice</a><br />
+                                                <a target="_blank" href="./exams/midterm2-qs.pdf">Practice Questions</a><br /><br />
+                                                Solutions & Annotations<br />
+                                                <a target="_blank" href="./exams/midterm2-f18sol.pdf">[Solutions] Fall 2018</a><br />
+                                                <a target="_blank" href="./exams/midterm2-s25pracsol.pdf">[Solutions] Spring 2025 Practice</a><br />
+                                            </td>
+
+                                        </tr><tr>
+                                            <td></td>
+                                            <td>Lecture 22 - Large-Scale Development, Random Number Generation, Graphical Programming<br />
+                                                <a href="lectures.pwl/LEC-22.pdf">Color</a>, <a href="lectures.pwl/LEC-22-BWN.pdf">B&W Handout</a>, <a href="may.pwl/LEC-22.pdf">Alternate</a></td>
+                                            <td></td>
+
+                                        </tr><tr>
+                                            <td>Week 14</td>
+                                            <td>Lecture 23 - Graphics Wrap-up, Buffer Overflows, System Calls<br />
+                                                <a href="lectures.pwl/LEC-23.pdf">Color</a>, <a href="lectures.pwl/LEC-23-BWN.pdf">B&W Handout</a>, <a href="may.pwl/LEC-23.pdf">Alternate</a></td>
+                                            <td></td>
+
+                                        </tr><tr>
+                                            <td></td>
+                                            <td>Lecture 24 - Buffer Overflows, Core Files, goto, and Makefiles<br />
+                                                <a href="lectures.pwl/LEC-24.pdf">Color</a>, <a href="lectures.pwl/LEC-24-BWN.pdf">B&W Handout</a>, <a href="may.pwl/LEC-24.pdf">Alternate</a></td>
+                                            <td></td>
+
+                                        </tr><tr>
+                                            <td>Week 15</td>
+                                            <td>Lecture 25 - Core Files and goto, Makefiles, Networking/Graphics<br />
+                                                <a href="lectures.pwl/LEC-25.pdf">Color</a>, <a href="lectures.pwl/LEC-25-BWN.pdf">B&W Handout</a>, <a href="may.pwl/LEC-25.pdf">Alternate</a></td>
+                                            <td></td>
+
+                                        </tr><tr>
+                                            <td>Week 16</td>
+                                            <td>Lecture 26 - Interfacing with Hardware<br />
+                                                <a href="lectures.pwl/LEC-26.pdf">Color</a>, <a href="lectures.pwl/LEC-26-BWN.pdf">B&W Handout</a>, <a href="may.pwl/LEC-26.pdf">Alternate</a>, <a href="https://turkeyland.net/play.php?vid=11">Squirrel Lecture</a></td>
+                                            <td></td>
+
+                                        </tr><tr>
+                                            <td></td>
+                                            <td>Lecture 27 - Networking Wrap-up, Final Exam Review<br />
+                                                <a href="lectures.pwl/LEC-27.pdf">Color</a>, <a href="lectures.pwl/LEC-27-BWN.pdf">B&W Handout</a>, <a href="may.pwl/LEC-27.pdf">Alternate</a></td>
+                                            <td></td>
+
+                                        </tr><tr>
+                                            <td>Week 17</td>
+                                            <td></td>
+                                            <td>
+                                                Final Exam<br />
+                                                Duration: 2 Hours<br />
+                                                <a target="_blank" href="./exams/final-f18.pdf">Fall 2018</a><br />
+                                                <a target="_blank" href="./exams/final-f21.pdf">Fall 2021</a><br />
+                                                <a target="_blank" href="./exams/final-student.pdf">Student-Made Practice</a><br />
+                                                <a target="_blank" href="./exams/final-qs.pdf">Practice Questions</a><br /><br />
+                                                Solutions & Annotations<br />
+                                                <a target="_blank" href="./exams/final-f21sol.pdf">[Solutions] Fall 2021</a><br />
+                                                <a target="_blank" href="./exams/final-studentsol.pdf">[Solutions] Student-Made Practice</a><br />
+                                            </td>
+
+                                        </tr></tbody>
+                            </table>
+                    </div>
+                </div>
+
+
+                <div class="footer">
+                    <div class="padding">
+                        <p>
+                        <img style="padding-top: 5px;" src="./images/anim_written_in_vi.gif" width="88" height="31" alt="Written in VI" />
+                        </p>
+                        &copy; 2025<br />All rights reserved.<br />All materials on this site are intended solely for the use of students enrolled in CS 240 at the Purdue University West Lafayette campus.<br />Downloading, copying, or reproducing any of the copyrighted materials posted on this site for anything other than educational purposes is forbidden.
+                        <br /><p style="font-size: 0.8em;">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </body>
+</html>
+
