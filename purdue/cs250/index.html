@@ -1,40 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>CS 250 Final Notes</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="icon" type="image/png" href="../../landing/img/logo.png">
-    </head>
-    <body>
-        <p>
-        The download for the CS25000 final notes starts automatically.<br><br>
-        Spring 2025<br>
-        CS 25000 Computer Architecture @ Purdue<br>
-        Prof. George B. Adams III<br><br>
-        Any suggestions for additions email <a href="mailto:blobosle@purdue.edu">blobosle@purdue.edu</a>, or create a <a href="https://github.com/Blobosle/CS250-Notes">pull request</a>.<br><br>
-        <b>Notes are not yet completed</b>
-        </p>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="color-scheme" content="light dark">
+        <title>CS 250 Final Exam Notes | Purdue University</title>
+        <meta name="description" content="Notes made for the Purdue CS 250 course under George Adams III.">
 
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2.1.1/css/pico.min.css">
+    </head>
+
+    <body>
+        <header class="container">
+            <hgroup>
+                <h1>CS 250 Final Exam Notes</h1>
+                <p>Benjamin Lobos Lertpunyaroj</p>
+            </hgroup>
+            <h5><a id="download-btn" href="#">Download</a></h5>
+            <p>
+            Spring 2025<br>
+            CS 25000 Computer Architecture @ Purdue<br>
+            Prof. George B. Adams III<br><br>
+            Any suggestions for additions email <a href="mailto:blobosle@purdue.edu">blobosle@purdue.edu</a>, or create a <a href="https://github.com/Blobosle/CS250-Notes">pull request</a>.<br><br>
+            <b>Notes are not yet completed</b>
+            </p>
+        </header>
         <script>
-            window.onload = function() {
+            document.getElementById('download-btn').addEventListener('click', function(e) {
+                e.preventDefault();
                 var link = document.createElement('a');
                 link.href = 'https://raw.githubusercontent.com/Blobosle/CS250-Notes/main/main.pdf';
                 link.download = 'blobosle-cs250-notes.pdf';
                 document.body.appendChild(link);
                 link.click();
                 document.body.removeChild(link);
-            };
+            });
         </script>
 
         <!-- Fallback for users without JavaScript -->
         <noscript>
             <p>
-            <a href="https://raw.githubusercontent.com/Blobosle/CS250-Notes/main/main.pdf" download="blobosle-cs250-notes.pdf">
-                Click here to download the notes
+            <a
+                    href="https://raw.githubusercontent.com/Blobosle/CS250-Notes/main/main.pdf"
+                    download="blobosle-cs250-notes.pdf"
+                    class="contrast"
+                    >
+                    Click here to download the notes
             </a>
             </p>
         </noscript>
+
     </body>
 </html>
 
