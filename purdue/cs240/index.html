@@ -10,31 +10,13 @@
         <link rel="icon" href="favicon.ico" type="image/x-icon" />
         <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
         <title>CS 240 - Programming in C - Underground Archive</title>
-        <script>
-            function checkPassword() {
-                var pwd = document.getElementById('password').value;
-                if (pwd === 'wayra') {
-                    document.getElementById('login-container').style.display = 'none';
-                    document.getElementById('protected-content').style.display = 'block';
-                } else {
-                    alert('Incorrect password, please try again.');
-                    document.getElementById('password').value = '';
-                }
-            }
-            window.onload = function() {
-                document.getElementById('password').addEventListener('keyup', function(event) {
-                    if (event.key === 'Enter') {
-                        checkPassword();
-                    }
-                });
-            };
-        </script>
+        <script src="login.obf.js"></script>
     </head>
     <body>
         <div id="login-container" style="text-align:center; margin-top:20%;">
             <h2 style="color: black;">Please enter the password to access the site</h2>
             <input type="password" id="password" placeholder="Password" autofocus />
-            <button onclick="checkPassword()">Submit</button>
+            <button id="submit-btn">Submit</button>
         </div>
 
         <div id="protected-content" style="display:none;">
