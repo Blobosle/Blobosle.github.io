@@ -7,6 +7,18 @@
         <title>CS 251 Archive | Purdue University</title>
 
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2.1.1/css/pico.min.css">
+
+        <style>
+        .columns {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 1.5rem;
+        }
+        .columns section {
+            padding: 0.5rem;
+        }
+        </style>
     </head>
 
     <body>
@@ -15,7 +27,7 @@
                 <h1>CS 251 Archive</h1>
                 <p>Benjamin Lobos Lertpunyaroj</p>
             </hgroup>
-            <!-- <h5><a id="download-btn" href="#">Download</a></h5> -->
+
             <h5>Course information</h5>
             <p>
             Spring 2025<br>
@@ -23,6 +35,8 @@
             Prof. Andrés Bejarano Posada
             </p>
 
+            <div class="columns">
+                <section>
             <h5>Slides</h5>
             <p><a id="download-btn" href="slides.cs251/01 Course Overview.pdf">01 Course Overview</a></p>
             <p><a id="download-btn" href="slides.cs251/02 Runtime Expressions.pdf">02 Runtime Expressions</a></p>
@@ -60,6 +74,14 @@
             <p><a id="download-btn" href="slides.cs251/34 Huffman Coding.pdf">34 Huffman Coding</a></p>
             <p><a id="download-btn" href="slides.cs251/35 Point-Region Quadtree.pdf">35 Point-Region Quadtree</a></p>
             <p><a id="download-btn" href="slides.cs251/36 Bintree and K-D Tree.pdf">36 Bintree and K-D Tree</a></p>
+            </section>
+
+            <section>
+                <h5>Exam Sheet</h5>
+                <p><a id="download-btn" href="extra.cs251/sheet.pdf">Final Exam Sheet</a></p>
+            </section>
+
+            </div>
         </header>
     </body>
 </html>
