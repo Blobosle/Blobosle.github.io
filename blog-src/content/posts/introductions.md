@@ -1,7 +1,7 @@
 +++
 date = '2025-06-09T21:32:00-07:00'
 draft = false
-title = 'An initial step!'
+title = 'A non-ergodic blog'
 +++
 
 # A non-ergodic blog
