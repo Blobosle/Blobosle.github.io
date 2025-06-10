@@ -24,11 +24,11 @@ relativeURLs  = false       # (set to true if you prefer purely relative paths)
 [[menu.navbar]]
   identifier = "showcase"
   name = "~/showcase"
-  url = "/changelog/"
+  url = "https://blobosle.com/showcase/"
   weight = 2
 
 [[menu.navbar]]
   identifier = "purdue"
   name = "~/purdue"
-  url = "/purdue/"
+  url = "https://blobosle.com/purdue/cs250/"
   weight = 3
