@@ -3,16 +3,16 @@ publishDir = "../blog"
 languageCode = 'en-us'
 title = 'A non-ergodic blog'
 theme = "hugo-theme-monochrome"
-canonifyURLs  = true        # rewrites all links so they start with the baseURL
-relativeURLs  = false       # (set to true if you prefer purely relative paths)
+canonifyURLs  = true
+relativeURLs  = false
 
 [outputs]
-  home = ["HTML","RSS","JSON"]                 # required if you want site search
+  home = ["HTML","RSS","JSON"]
 
 [params]
-  navbar_title       = "~/blog"          # the title in your navbar :contentReference[oaicite:1]{index=1}
-  footer             = "© 2025 Benjamin Lobos Lertpunyaroj"        # optional footer text :contentReference[oaicite:2]{index=2}
-  enable_site_search = true                    # if you want the search icon :contentReference[oaicite:3]{index=3}
+  navbar_title = "~/blog"
+  footer = "© 2025 Benjamin Lobos Lertpunyaroj"
+  enable_site_search = true
 
 
 [[menu.navbar]]
@@ -22,13 +22,13 @@ relativeURLs  = false       # (set to true if you prefer purely relative paths)
   weight = 1
 
 [[menu.navbar]]
-  identifier = "showcase"
-  name = "~/showcase"
-  url = "https://blobosle.com/showcase/"
+  identifier = "purdue"
+  name = "~/purdue"
+  url = "/purdue/"
   weight = 2
 
 [[menu.navbar]]
-  identifier = "purdue"
-  name = "~/purdue"
-  url = "https://blobosle.com/purdue/cs250/"
+  identifier = "showcase"
+  name = "~/showcase"
+  url = "https://blobosle.com/showcase/"
   weight = 3
