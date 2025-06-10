@@ -23,7 +23,7 @@ relativeURLs  = false
 
 [[menu.navbar]]
   identifier = "purdue"
-  name = "~/purdue"
+  name = "./purdue"
   url = "/purdue/"
   weight = 2
 
