@@ -10,7 +10,7 @@ Non-ergodic refers to the difference that exists between an individual doing one
 
 In this sense, the old is preferred over the new, survival is preferred over modernity, practice is preferred over academia.
 
-The posts written up will not attempt to mellow down (or as I believe, fragilize) the ideas stated to a common denominator for the reader to understand, and will rather leave the concepts to be internalize at the reader's pace. This is not because the ideas I want to write about represent an absolute truth of sorts, but rather because ideas misallign themsleves when there is another purpose behind them other than exploring the domain (e.g. showing off to the reader, status games, among other entertainment-related domains).
+The posts written up will not attempt to mellow down (or as I believe, fragilize) the ideas stated to a common denominator for the reader to understand. It will rather leave the concepts to be internalize at the reader's pace. This is not because the ideas I want to write about represent an absolute truth of sorts, but rather because ideas misallign themsleves when there is another purpose behind them other than exploring the domain (e.g. showing off to the reader, status games, among other entertainment-related domains).
 
 Most will not enjoy the writings of this blog, and that is a satisfactory reality–not because I do not want everyone to like the posts published, but because if it did try to entertain, then it will misallign itself with what I want this medium of writing to be. I do not want this to dilute down to a simple Medium copy-cat blog, even if it is at the expense of popularity or acceptance.
 
