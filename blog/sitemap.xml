@@ -2,17 +2,17 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>/</loc>
+    <loc>https://blobosle.com/blog/</loc>
     <lastmod>2025-06-09T21:32:00-07:00</lastmod>
   </url><url>
-    <loc>/posts/</loc>
+    <loc>https://blobosle.com/blog/posts/</loc>
     <lastmod>2025-06-09T21:32:00-07:00</lastmod>
   </url><url>
-    <loc>/posts/first/</loc>
+    <loc>https://blobosle.com/blog/posts/first/</loc>
     <lastmod>2025-06-09T21:32:00-07:00</lastmod>
   </url><url>
-    <loc>/categories/</loc>
+    <loc>https://blobosle.com/blog/categories/</loc>
   </url><url>
-    <loc>/tags/</loc>
+    <loc>https://blobosle.com/blog/tags/</loc>
   </url>
 </urlset>

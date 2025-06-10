@@ -1,8 +1,10 @@
-seURL   = "https://blobosle.com/blog/"
+baseURL   = "https://blobosle.com/blog/"
 publishDir = "../blog"
 languageCode = 'en-us'
 title = 'A non-ergodic blog'
 theme = "hugo-theme-monochrome"
+canonifyURLs  = true        # rewrites all links so they start with the baseURL
+relativeURLs  = false       # (set to true if you prefer purely relative paths)
 
 [outputs]
   home = ["HTML","RSS","JSON"]                 # required if you want site search
