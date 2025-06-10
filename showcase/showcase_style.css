@@ -119,6 +119,29 @@
     opacity: 1;
 }
 
+
+.showcase .blog {
+    position: absolute;
+    top: 40px;
+    left: 1060px;
+    font-family: "Albert Sans", sans-serif;
+    font-weight: 700;
+    color: var(--surfacesurface-100);
+    opacity: 0.4;
+    font-size: 25px;
+    letter-spacing: 0;
+    line-height: 20px;
+    white-space: nowrap;
+    cursor: pointer;
+    display: inline-block;
+    transition: color 0.1s ease-in-out, opacity 0.1s ease-in-out;
+}
+
+.showcase .blog:hover {
+    color: #fff;
+    opacity: 1;
+}
+
 .showcase .header {
     display: flex;
     width: 1285px;
