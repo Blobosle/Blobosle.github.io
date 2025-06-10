@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on A non-ergodic blog</title>
+    <link>/posts/</link>
+    <description>Recent content in Posts on A non-ergodic blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 09 Jun 2025 21:32:00 -0700</lastBuildDate><atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Welcome to the blog!</title>
+      <link>/posts/first/</link>
+      <pubDate>Mon, 09 Jun 2025 21:32:00 -0700</pubDate>
+      
+      <guid>/posts/first/</guid>
+      <description>&lt;h1 id=&#34;welcome-to-a-non-ergodic-blog&#34; class=&#34;header-anchor-wrapper&#34;&gt;Welcome to a non-ergodic blog!
+  &lt;a href=&#34;#welcome-to-a-non-ergodic-blog&#34; class=&#34;header-anchor-link&#34;&gt;
+    &lt;svg width=&#34;16px&#34; height=&#34;16px&#34; viewBox=&#34;0 0 24 24&#34;&gt;
+&lt;svg
+    xmlns=&#34;http://www.w3.org/2000/svg&#34;
+    width=&#34;24&#34; height=&#34;24&#34; viewBox=&#34;0 0 24 24&#34; fill=&#34;none&#34;
+    stroke=&#34;currentColor&#34; stroke-width=&#34;2&#34; stroke-linecap=&#34;round&#34;
+    stroke-linejoin=&#34;round&#34;&gt;
+    &lt;line x1=&#34;4&#34; y1=&#34;9&#34; x2=&#34;20&#34; y2=&#34;9&#34;&gt;&lt;/line&gt;&lt;line x1=&#34;4&#34; y1=&#34;15&#34; x2=&#34;20&#34; y2=&#34;15&#34;&gt;&lt;/line&gt;&lt;line x1=&#34;10&#34; y1=&#34;3&#34; x2=&#34;8&#34; y2=&#34;21&#34;&gt;&lt;/line&gt;&lt;line x1=&#34;16&#34; y1=&#34;3&#34; x2=&#34;14&#34; y2=&#34;21&#34;&gt;&lt;/line&gt;
+&lt;/svg&gt;
+
+&lt;/svg&gt;
+  &lt;/a&gt;
+&lt;/h1&gt;
+
+&lt;p&gt;Non-ergodic refers to ideas that are not going to be mellowed down by what is popular/good-say of a particular time period. Instead it will attempt to focus on creating Lindy ideas–that is, ideas that hold over time.&lt;/p&gt;
+&lt;p&gt;The old is preferred over the new. Survival is preferred over modernity. Practice is preferred over academia.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

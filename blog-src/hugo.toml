@@ -1,0 +1,32 @@
+seURL   = "https://blobosle.com/blog/"
+publishDir = "../blog"
+languageCode = 'en-us'
+title = 'A non-ergodic blog'
+theme = "hugo-theme-monochrome"
+
+[outputs]
+  home = ["HTML","RSS","JSON"]                 # required if you want site search
+
+[params]
+  navbar_title       = "~/blog"          # the title in your navbar :contentReference[oaicite:1]{index=1}
+  footer             = "© 2025 Benjamin Lobos Lertpunyaroj"        # optional footer text :contentReference[oaicite:2]{index=2}
+  enable_site_search = true                    # if you want the search icon :contentReference[oaicite:3]{index=3}
+
+
+[[menu.navbar]]
+  identifier = "posts"
+  name = "./posts"
+  url = "/posts/"
+  weight = 1
+
+[[menu.navbar]]
+  identifier = "showcase"
+  name = "~/showcase"
+  url = "/changelog/"
+  weight = 2
+
+[[menu.navbar]]
+  identifier = "purdue"
+  name = "~/purdue"
+  url = "/purdue/"
+  weight = 3
