@@ -4,12 +4,14 @@ draft = false
 title = 'An initial step!'
 +++
 
-# A non-ergodic blog!
+# A non-ergodic blog
 
-Non-ergodic refers to ideas that are not going to be mellowed down by what is popular/good-say of a particular time period. Instead it will attempt to focus on creating Lindy ideas–that is, ideas that hold over time.
+Non-ergodic refers to the difference that exists between an individual doing one thing many times, and a group of people doing the same thing once. In this sense, the series of posts featured in this blog will explore concepts that may or may not be mainstream in a "survivalistic" manner–looking at permanence over time dependent solutions.
 
-The old is preferred over the new. Survival is preferred over modernity. Practice is preferred over academia.
+In this sense, the old is preferred over the new, survival is preferred over modernity, practice is preferred over academia.
 
-This is not a blog for any person other than me to understand. It will do no attempt at filtering writing into a common denominator for "understanding", as that will be left for the reader to perform if so desired.
+The posts written up will not attempt to mellow down (or as I believe, fragilize) the ideas stated to a common denominator for the reader to understand, and will rather leave the concepts to be internalize at the reader's pace. This is not because the ideas I want to write about represent an absolute truth of sorts, but rather because ideas misallign themsleves when there is another purpose behind them other than exploring the domain (e.g. showing off to the reader, status games, among other entertainment-related domains).
 
-Not for everyone, but important nonetheless.
+Most will not enjoy the writings of this blog, and that is a satisfactory reality–not because I do not want everyone to like the posts published, but because if it did try to entertain, then it will misallign itself with what I want this medium of writing to be. I do not want this to dilute down to a simple Medium copy-cat blog, even if it is at the expense of popularity or acceptance.
+
+These are the ground ideas of the non-ergodic blog, hope that you can find something here worth your time!
