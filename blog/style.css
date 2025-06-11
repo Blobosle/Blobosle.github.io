@@ -829,9 +829,10 @@ ul.list-layout {
 .postcard-layout .postcard-item {
   padding: 1rem;
   background-color: var(--color-background-card);
-  border-radius: .375rem;
-  margin: 2rem 0;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); }
+  border: 1px solid var(--color-border-card, #e5e7eb);
+  border-radius: 1rem;
+  margin: 1rem 0;
+  box-shadow: 0 1px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); }
   .postcard-layout .postcard-item:hover {
     background-color: var(--color-background-hover); }
   .postcard-layout .postcard-item .postcard-title {
@@ -839,7 +840,7 @@ ul.list-layout {
     /* 20px */
     line-height: 1.75rem;
     /* 28px */
-    font-weight: 500; }
+    font-weight: 700; }
   .postcard-layout .postcard-item .postcard-summary {
     font-size: 0.75rem;
     /* 12px */
@@ -849,7 +850,7 @@ ul.list-layout {
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
-    margin: .5rem 0; }
+    margin: .7rem 0; }
   .postcard-layout .postcard-item .postcard-metadata {
     font-size: 0.75rem;
     /* 12px */

@@ -1,0 +1,17 @@
+/* static/user.css  */
+.intro-float{
+  float:left;           /* makes the text turn into a sidebar */
+  width:18rem;          /* tweak to taste */
+  margin:0 2rem 1rem 0; /* a little breathing room */
+  font-size:1rem;
+  line-height:1.55;
+}
+
+/* stack everything on narrow screens */
+@media (max-width:45rem){
+  .intro-float{
+    float:none;
+    width:auto;
+    margin:0 0 1.5rem 0;
+  }
+}
