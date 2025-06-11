@@ -4,9 +4,9 @@ draft = false
 title = 'Out of love for the prescription'
 +++
 
-> This post is currently in its draft phase.
-
 # Out of love for the prescription
+
+> An exploration into how-to's, non-tractable knowledge, misalignments, and density problems.
 
 Prescriptions are how-to's, advice, a set of instructions. They originate in an attempt to achieve a certain objective in a domain, whether that be financial success, fashion sense, basketball shooting, and many more.
 
@@ -14,7 +14,7 @@ Some may perceive that the emergence of prescriptions come from the needs of peo
 
 In this post, I will expand upon the uselessness of prescriptions when facing an uncertain environment, the domain dependence problem of not being able to distinguish the difference between learning, and understanding (that is classroom vs apprenticeship), and showing something related to this that I like to call density problems.
 
-## Dying in the name of stability
+### Dying in the name of stability
 
 Not a lot of people seem to like uncertainty, and with good reason (at least I feel like there is a good reason for this that you can derive on your own).
 
@@ -34,9 +34,9 @@ You can approximate an understanding to non-tractable non-traceable non-narratab
 
 It is the innate property of this type of knowledge that it is un-transmissible, and, coupled with its impact in the outcome of an activity, it is the reason why we can't to-do's that work for everything. It is also one of the more obscured rules of the game of life.
 
-## Make the stars align, all the time, every time
+### Make the stars align, all the time, every time
 
-The way that non-tractable knowledge is acquired is through exposure to the domain of the activity. This mean that if you want to build a successful business, you quite literally, build a business to learn how to build, instead of learning from a degree, MBA, or book. If you want to learn to program, you don't watch hour long tutorials of a person trying to explain a whole programming language in a condensed manner, you build projects related to the programming language you are learning, because your success is literally determined by your capacity to build using that language.
+The way that non-tractable knowledge is acquired is through exposure to the domain of the activity. This means that if you want to build a successful business, you quite literally, build a business to learn how to build, instead of learning from a degree, MBA, or book. If you want to learn to program, you don't watch hour long tutorials of a person trying to explain a whole programming language in a condensed manner, you build projects related to the programming language you are learning, because your success is literally determined by your capacity to build using that language.
 
 You learn with the domain itself, anything else causes deviations. This is also the reason why people straight out of college fail to adapt to the work environment in comparison to those coming out from an apprenticeship with an experienced individual: the student learns how to perform well in classes that happen to be of the domain, they don't learn the domain itself. The student becomes good at finishing school programming projects, yet struggles when they need to ship a program under a similar deadline.
 
@@ -44,6 +44,16 @@ Does this mean that we should throw college, books, and all other forms of presc
 
 The readjustment is a downturn in terms of progress. It can be seen like a recessions in an economy. A necessary period of readjustment that will only be required to be done once at best ("best" does a lot of heavy lifting).
 
-Also because of its nature, it is impossible (maybe) to ascertain its existence to explain in a medium like writing. As such, funnily enough, I will ask the reader to obtain exposure to gain the non-narratable non-traceable non-tractable knowledge to understand non-narratable non-traceable non-tractable knowledge. You gain understanding of a domain through the domain itself.
+Also because of its nature, it is impossible (maybe) to ascertain its existence to explain in a medium like writing. As such, funnily enough, I will ask the reader to obtain exposure to gain the non-narratable non-traceable non-tractable knowledge necessary to understand non-narratable non-traceable non-tractable knowledge. You gain understanding of a domain through the domain itself.
 
+### Density is king when observed from the higher levels
 
+Density problems, is a term I use to refer to when people try "lifting too much for their weight class". They attempt to apply a routine, advice, or any sort of prescription without considering that they may not have enough "muscle" (non-tractable knowledge) to apply it.
+
+It's not that the daily routine that your favorite influencer gave you is in any way lackluster to be applied to your situation (which we will later see that it probably is), but rather that you do not have enough experience/exposure in the domain of routines to be able to perform it. In this sense, you will only be able to apply prescriptions to the level of your exposure.
+
+There is also the case that the prescription that you want to follow is aligned with the advice-giver, which means that it only is applicable with the person that has experienced and derived such how-to's from it. You will only be able to apply a prescription in a domain once you gain enough exposure to the domain. In other words, have enough "muscle density" to be able to play that your "weight class".
+
+Every domain is always dependent on the domain itself.
+
+Every advancement done in a field is dependent on the application of the advancement itself.

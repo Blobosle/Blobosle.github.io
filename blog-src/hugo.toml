@@ -32,3 +32,9 @@ relativeURLs  = false
   name = "~/showcase"
   url = "https://blobosle.com/showcase/"
   weight = 3
+
+[markup]
+  [markup.goldmark]
+  [markup.goldmark.renderer]
+  unsafe = true
+
