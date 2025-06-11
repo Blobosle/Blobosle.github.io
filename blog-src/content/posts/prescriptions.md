@@ -6,7 +6,7 @@ title = 'Out of love for the prescription'
 
 # Out of love for the prescription
 
-> An exploration into how-to's, non-tractable knowledge, misalignments, and density problems.
+> *An exploration into how-to's, non-tractable knowledge, misalignments, and density problems.*
 
 Prescriptions are how-to's, advice, a set of instructions. They originate in an attempt to achieve a certain objective in a domain, whether that be financial success, fashion sense, basketball shooting, and many more.
 
