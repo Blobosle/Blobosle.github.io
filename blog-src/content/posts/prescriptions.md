@@ -54,6 +54,8 @@ It's not that the daily routine that your favorite influencer gave you is in any
 
 There is also the case that the prescription that you want to follow is aligned with the advice-giver, which means that it only is applicable with the person that has experienced and derived such how-to's from it. You will only be able to apply a prescription in a domain once you gain enough exposure to the domain. In other words, have enough "muscle density" to be able to play that your "weight class".
 
+---
+
 Every domain is always dependent on the domain itself.
 
 Every advancement done in a field is dependent on the application of the advancement itself.
