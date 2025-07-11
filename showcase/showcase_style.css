@@ -143,7 +143,7 @@
 }
 
 
-.showcase .home-main-site {
+.showcase .home {
     position: absolute;
     top: 40px;
     left: 980px;
@@ -160,7 +160,7 @@
     transition: color 0.1s ease-in-out, opacity 0.1s ease-in-out;
 }
 
-.showcase .home-main-site:hover {
+.showcase .home:hover {
     color: #fff;
     opacity: 1;
 }
