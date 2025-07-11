@@ -2,7 +2,6 @@
 
 ## Urgent
 
-- Add links to projects from home site.
 - Optimize showcase site.
 
 ## Not so urgent
