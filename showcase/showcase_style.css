@@ -142,6 +142,30 @@
     opacity: 1;
 }
 
+
+.showcase .home-main-site {
+    position: absolute;
+    top: 40px;
+    left: 980px;
+    font-family: "Albert Sans", sans-serif;
+    font-weight: 700;
+    color: var(--surfacesurface-100);
+    opacity: 0.4;
+    font-size: 25px;
+    letter-spacing: 0;
+    line-height: 20px;
+    white-space: nowrap;
+    cursor: pointer;
+    display: inline-block;
+    transition: color 0.1s ease-in-out, opacity 0.1s ease-in-out;
+}
+
+.showcase .home-main-site:hover {
+    color: #fff;
+    opacity: 1;
+}
+
+
 .showcase .header {
     display: flex;
     width: 1285px;
