@@ -2,8 +2,6 @@
 
 ## Urgent
 
-- Optimize showcase site.
-
 ## Not so urgent
 
 - Add scroll down animations to quick links in home site.
@@ -11,5 +9,3 @@
 - Implement dark mode
 
 ## External
-
-- Automate resume fetching.
