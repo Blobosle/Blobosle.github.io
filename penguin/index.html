@@ -65,7 +65,11 @@
                 'gcc main.c -Wall -Werror -o main',
                 'sudo rm -rf /',
                 'git commit -m "Testing in prod"',
-                'make clean'
+                'make clean',
+                'lld-link: error: duplicate symbol: “_start”',
+                '*** stack smashing detected ***',
+                'Bus error (core dumped)',
+                'gdb: Can’t access memory at address 0x0',
             ];
 
             const typedSpan  = document.getElementById('typed');
