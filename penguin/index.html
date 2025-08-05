@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>penguin msg 4 u</title>
+
+        <style>
+    html, body {
+        margin: 0;
+        width: 100%;
+        height: 100%;
+    }
+    body {
+        background: #000;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: "Fira Code", ui-monospace, SFMono-Regular, monospace;
+        font-weight: 600;
+    }
+
+    .bg-gif {
+        position: fixed;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -1;
+        pointer-events: none;
+    }
+
+    .content {
+        color: #fff;
+        text-align: center;
+        z-index: 1;
+        font-size: clamp(1.25rem, 5vw, 3rem);
+        white-space: nowrap;
+        text-shadow: 2px 2px 6px rgba(0,0,0,0.30);
+    }
+
+    .cursor {
+        display: inline-block;
+        width: 0.6ch;
+        height: 1em;
+        background: #fff;
+        margin-left: 2px;
+        vertical-align: bottom;
+    }
+    @keyframes blink { 50% { background: transparent; } }
+        </style>
+    </head>
+
+    <body>
+        <img src="bg.gif" alt="Full-screen background" class="bg-gif" />
+
+        <div class="content">
+            <span id="typed"></span><span class="cursor"></span>
+        </div>
+
+        <script>
+            const phrases = [
+                'echo "Hello, World!"',
+                'Segmentation fault (core dumped)',
+                'gcc main.c -Wall -Werror -o main',
+                'sudo rm -rf /',
+                'git commit -m "Testing in prod"',
+                'make clean'
+            ];
+
+            const typedSpan  = document.getElementById('typed');
+            const SPEED_FWD  = 70;
+            const SPEED_BACK = 40;
+            const HOLD_TIME  = 25000;
+
+            let p = 0;
+            let c = 0;
+            let dir = 1;
+
+            function loop () {
+                const text = phrases[p];
+
+                if (dir === 1) {
+                    if (c < text.length) {
+                        typedSpan.textContent += text[c++];
+                        setTimeout(loop, SPEED_FWD);
+                    } else {
+                        dir = -1;
+                        setTimeout(loop, HOLD_TIME);
+                    }
+                } else {
+                    if (c > 0) {
+                        typedSpan.textContent = text.slice(0, --c);
+                        setTimeout(loop, SPEED_BACK);
+                    } else {
+                        dir = 1;
+                        p = (p + 1) % phrases.length;
+                        setTimeout(loop, SPEED_FWD);
+                    }
+                }
+            }
+
+            window.addEventListener('DOMContentLoaded', loop);
+        </script>
+    </body>
+</html>
+
