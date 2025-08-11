@@ -1,525 +1,469 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>Benji's Digital Camera</title>
-        <style>
-/* THEME: Light by default; Dark overrides under [data-theme="dark"] */
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Benji's Digital Camera</title>
+    <style>
+/* Light theme only (dark mode removed) */
 :root {
-    --bg: #f6f7fb;
-    --panel: #ffffff;
-    --panel-2: #f3f5fa;
-    --text: #0b1221;
-    --muted: #606a7c;
-    --accent: #2563eb; /* blue */
-    --accent-2: #1d4ed8;
-    --brand: #c75100; /* date-stamp amber (darker for light bg) */
-    --border: #e5e7ef;
-    --border-2: #d7dcea;
-    --drop-bg: #f8fafc;
-    --range-track: #d9dfeb;
-    --canvas-bg: #eef2f7;
-    --shadow: 0 8px 24px rgba(9, 12, 20, 0.08);
-    --shadow-inset: inset 0 0 0 1px rgba(14,23,38,0.05);
-    --ring: rgba(37,99,235,0.3);
+  --bg: #f6f7fb;
+  --panel: #ffffff;
+  --panel-2: #f3f5fa;
+  --text: #0b1221;
+  --muted: #606a7c;
+  --accent: #2563eb; /* blue */
+  --accent-2: #1d4ed8;
+  --brand: #c75100; /* date-stamp amber (darker for light bg) */
+  --border: #e5e7ef;
+  --border-2: #d7dcea;
+  --drop-bg: #f8fafc;
+  --range-track: #d9dfeb;
+  --canvas-bg: #eef2f7;
+  --shadow: 0 8px 24px rgba(9, 12, 20, 0.08);
+  --shadow-inset: inset 0 0 0 1px rgba(14,23,38,0.05);
+  --ring: rgba(37,99,235,0.3);
 }
-    [data-theme="dark"] {
-        --bg: #0b0c10;
-        --panel: #111319;
-        --panel-2: #161924;
-        --text: #e9ecf1;
-        --muted: #9aa4b2;
-        --accent: #66fcf1;
-        --accent-2: #45a29e;
-        --brand: #ff8c00;
-        --border: #1f2433;
-        --border-2: #2b3347;
-        --drop-bg: #0f1421;
-        --range-track: #222a3c;
-        --canvas-bg: #0a0f19;
-        --shadow: 0 10px 30px rgba(0,0,0,0.35);
-        --shadow-inset: inset 0 0 0 1px rgba(255,255,255,0.02);
-        --ring: rgba(102,252,241,0.25);
-    }
 
 * { box-sizing: border-box; }
 html, body { height: 100%; }
 body {
-    margin: 0;
-    font: 14px/1.4 system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
-    color: var(--text);
-    background: radial-gradient(1200px 900px at 15% -10%, #ffffff 0%, #f3f5fb 45%, var(--bg) 100%);
+  margin: 0;
+  font: 14px/1.4 system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  color: var(--text);
+  background: radial-gradient(1200px 900px at 15% -10%, #ffffff 0%, #f3f5fb 45%, var(--bg) 100%);
 }
-    [data-theme="dark"] body, body[data-theme="dark"] { /* extra guard for some browsers */
-        background: radial-gradient(1200px 900px at 15% -10%, #192033 0%, #0d111a 40%, var(--bg) 100%);
-    }
 
-    header {
-        padding: 24px 20px 12px;
-        display: flex; gap: 14px; align-items: center; justify-content: space-between;
-    }
-    .title { font-size: 22px; font-weight: 700; letter-spacing: 0.3px; display: flex; align-items: center; gap: 10px; }
-    .title .dot { width: 10px; height: 10px; border-radius: 999px; background: var(--accent); box-shadow: 0 0 14px var(--ring); display: inline-block; }
-    .sub { color: var(--muted); font-size: 12px; }
+header { padding: 24px 20px 12px; display: flex; gap: 14px; align-items: center; justify-content: space-between; }
+.title { font-size: 22px; font-weight: 700; letter-spacing: 0.3px; display: flex; align-items: center; gap: 10px; }
+.title .dot { width: 10px; height: 10px; border-radius: 999px; background: var(--accent); box-shadow: 0 0 14px var(--ring); display: inline-block; }
+.sub { color: var(--muted); font-size: 12px; }
 
-    .theme-toggle { display: inline-flex; align-items: center; gap: 8px; }
-    .switch {
-        border: 1px solid var(--border-2);
-        background: var(--panel-2);
-        padding: 8px 12px; border-radius: 999px; cursor: pointer; user-select: none; font-weight: 600;
-        box-shadow: var(--shadow);
-    }
+main { padding: 10px 20px 40px; max-width: 1100px; margin: 0 auto; }
 
-    main { padding: 10px 20px 40px; max-width: 1100px; margin: 0 auto; }
+.grid { display: grid; grid-template-columns: 360px 1fr; gap: 18px; }
 
-    .grid { display: grid; grid-template-columns: 360px 1fr; gap: 18px; }
+.card { background: linear-gradient(180deg, var(--panel) 0%, var(--panel-2) 100%); border: 1px solid var(--border); border-radius: 16px; padding: 16px; box-shadow: var(--shadow); }
 
-    .card { background: linear-gradient(180deg, var(--panel) 0%, var(--panel-2) 100%); border: 1px solid var(--border); border-radius: 16px; padding: 16px; box-shadow: var(--shadow); }
+.drop { border: 2px dashed var(--border-2); border-radius: 14px; padding: 18px; text-align: center; color: var(--muted); transition: border-color .2s ease, background .2s ease, box-shadow .2s ease; cursor: pointer; background: var(--drop-bg); }
+.drop.dragover { border-color: var(--accent); box-shadow: 0 0 0 4px var(--ring) inset; }
+.drop input { display: none; }
 
-    .drop { border: 2px dashed var(--border-2); border-radius: 14px; padding: 18px; text-align: center; color: var(--muted); transition: border-color .2s ease, background .2s ease, box-shadow .2s ease; cursor: pointer; background: var(--drop-bg); }
-    .drop.dragover { border-color: var(--accent); box-shadow: 0 0 0 4px var(--ring) inset; }
-    .drop input { display: none; }
+.controls { display: grid; gap: 14px; margin-top: 12px; }
+label { font-size: 12px; color: var(--muted); display: block; margin-bottom: 6px; }
+.row { display: grid; grid-template-columns: 1fr auto; gap: 8px; align-items: end; }
 
-    .controls { display: grid; gap: 14px; margin-top: 12px; }
-    label { font-size: 12px; color: var(--muted); display: block; margin-bottom: 6px; }
-    .row { display: grid; grid-template-columns: 1fr auto; gap: 8px; align-items: end; }
+select, input[type="text"], input[type="number"] {
+  width: 100%; background: var(--panel-2); color: var(--text); border: 1px solid var(--border-2); border-radius: 12px; padding: 10px 12px; outline: none;
+}
 
-    select, input[type="text"], input[type="number"] {
-        width: 100%; background: var(--panel-2); color: var(--text); border: 1px solid var(--border-2); border-radius: 12px; padding: 10px 12px; outline: none;
-    }
+input[type="range"] { width: 100%; -webkit-appearance: none; appearance: none; height: 4px; border-radius: 999px; background: var(--range-track); outline: none; }
+input[type="range"]::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; width: 18px; height: 18px; border-radius: 999px; background: var(--accent); box-shadow: 0 0 10px var(--ring); cursor: pointer; border: 0; }
+input[type="checkbox"] { width: 18px; height: 18px; vertical-align: -3px; accent-color: var(--accent); }
 
-    input[type="range"] { width: 100%; -webkit-appearance: none; appearance: none; height: 4px; border-radius: 999px; background: var(--range-track); outline: none; }
-    input[type="range"]::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; width: 18px; height: 18px; border-radius: 999px; background: var(--accent); box-shadow: 0 0 10px var(--ring); cursor: pointer; border: 0; }
-    input[type="checkbox"] { width: 18px; height: 18px; vertical-align: -3px; accent-color: var(--accent); }
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 10px 14px; border-radius: 12px; border: 1px solid var(--border-2); background: linear-gradient(180deg, var(--panel-2), var(--panel)); color: var(--text); cursor: pointer; text-decoration: none; user-select: none; font-weight: 600; letter-spacing: .2px; transition: transform .08s ease, box-shadow .2s ease, border-color .2s ease; box-shadow: var(--shadow); }
+.btn:hover { border-color: var(--accent-2); box-shadow: 0 0 0 4px var(--ring); }
+.btn:active { transform: translateY(1px); }
+.btn.primary { background: linear-gradient(180deg, #3b82f6, #2563eb); border-color: #1d4ed8; color: #ffffff; }
+.btn[disabled], .btn[aria-disabled="true"] { opacity: .6; cursor: not-allowed; }
 
-    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 10px 14px; border-radius: 12px; border: 1px solid var(--border-2); background: linear-gradient(180deg, var(--panel-2), var(--panel)); color: var(--text); cursor: pointer; text-decoration: none; user-select: none; font-weight: 600; letter-spacing: .2px; transition: transform .08s ease, box-shadow .2s ease, border-color .2s ease; box-shadow: var(--shadow); }
-    .btn:hover { border-color: var(--accent-2); box-shadow: 0 0 0 4px var(--ring); }
-    .btn:active { transform: translateY(1px); }
-    .btn.primary { background: linear-gradient(180deg, #3b82f6, #2563eb); border-color: #1d4ed8; color: #ffffff; }
-    .btn[disabled], .btn[aria-disabled="true"] { opacity: .6; cursor: not-allowed; }
+.canvas-wrap { display: grid; gap: 10px; height: 100%; grid-template-rows: auto 1fr auto; min-height: 520px; }
+#outCanvas { width: 100%; height: 100%; background: var(--canvas-bg); border-radius: 14px; border: 1px solid var(--border); box-shadow: var(--shadow-inset); }
+.meta { color: var(--muted); font-size: 12px; display: flex; gap: 12px; flex-wrap: wrap; }
+.pill { background: var(--panel-2); border: 1px solid var(--border); padding: 6px 10px; border-radius: 999px; }
 
-    .canvas-wrap { display: grid; gap: 10px; height: 100%; grid-template-rows: auto 1fr auto; min-height: 520px; }
-    #outCanvas { width: 100%; height: 100%; background: var(--canvas-bg); border-radius: 14px; border: 1px solid var(--border); box-shadow: var(--shadow-inset); }
-    .meta { color: var(--muted); font-size: 12px; display: flex; gap: 12px; flex-wrap: wrap; }
-    .pill { background: var(--panel-2); border: 1px solid var(--border); padding: 6px 10px; border-radius: 999px; }
+footer { text-align: center; color: var(--muted); margin-top: 18px; font-size: 12px; }
+.small { font-size: 11px; color: var(--muted); }
 
-    footer { text-align: center; color: var(--muted); margin-top: 18px; font-size: 12px; }
-    .small { font-size: 11px; color: var(--muted); }
+@media (max-width: 980px){ .grid { grid-template-columns: 1fr; } }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="title"><span class="dot"></span> Benji's Digital Camera</div>
+      <div class="sub">Upload a photo → get a higher‑res version with that classic point‑and‑shoot flash vibe.</div>
+    </header>
 
-    @media (max-width: 980px){ .grid { grid-template-columns: 1fr; } }
-        </style>
-    </head>
-    <body>
-        <header>
-            <div class="title"><span class="dot"></span> Benji's Digital Camera</div>
-            <div class="sub">Upload a photo → get a higher‑res version with that classic point‑and‑shoot flash vibe.</div>
-            <div class="theme-toggle">
-                <button id="themeBtn" class="switch" aria-pressed="false" title="Toggle light/dark">☀️ Light</button>
+    <main class="grid">
+      <!-- Left: Controls -->
+      <section class="card">
+        <label>Upload image</label>
+        <div id="drop" class="drop">
+          <input id="file" type="file" accept="image/*" />
+          <div><strong>Click to choose</strong> or drag & drop a photo here</div>
+          <div class="small" style="margin-top:6px">JPG, PNG, WebP. Processed entirely in your browser.</div>
+        </div>
+
+        <div class="controls">
+          <div>
+            <label for="scale">Upscale amount</label>
+            <select id="scale">
+              <option value="1.5">1.5× (gentle)</option>
+              <option value="2" selected>2×</option>
+              <option value="3">3×</option>
+              <option value="4">4×</option>
+            </select>
+          </div>
+
+          <div class="row">
+            <div>
+              <label for="maxdim">Max output dimension (px)</label>
+              <input id="maxdim" type="number" min="512" step="1" value="4096" />
             </div>
-        </header>
+            <button id="processBtn" class="btn" disabled>Process</button>
+          </div>
 
-        <main class="grid">
-            <!-- Left: Controls -->
-            <section class="card">
-                <label>Upload image</label>
-                <div id="drop" class="drop">
-                    <input id="file" type="file" accept="image/*" />
-                    <div><strong>Click to choose</strong> or drag & drop a photo here</div>
-                    <div class="small" style="margin-top:6px">JPG, PNG, WebP. Processed entirely in your browser.</div>
-                </div>
+          <div>
+            <label for="intensity">Nostalgic flash intensity</label>
+            <input id="intensity" type="range" min="0" max="100" value="65" />
+          </div>
 
-                <div class="controls">
-                    <div>
-                        <label for="scale">Upscale amount</label>
-                        <select id="scale">
-                            <option value="1.5">1.5× (gentle)</option>
-                            <option value="2" selected>2×</option>
-                            <option value="3">3×</option>
-                            <option value="4">4×</option>
-                        </select>
-                    </div>
+          <div>
+            <label for="sharpen">Detail / sharpening</label>
+            <input id="sharpen" type="range" min="0" max="100" value="35" />
+          </div>
 
-                    <div class="row">
-                        <div>
-                            <label for="maxdim">Max output dimension (px)</label>
-                            <input id="maxdim" type="number" min="512" step="1" value="4096" />
-                        </div>
-                        <button id="processBtn" class="btn" disabled>Process</button>
-                    </div>
+          <div>
+            <label for="grain">Film grain</label>
+            <input id="grain" type="range" min="0" max="100" value="18" />
+          </div>
 
-                    <div>
-                        <label for="intensity">Nostalgic flash intensity</label>
-                        <input id="intensity" type="range" min="0" max="100" value="65" />
-                    </div>
+          <div>
+            <label for="vignette">Vignette</label>
+            <input id="vignette" type="range" min="0" max="100" value="28" />
+          </div>
 
-                    <div>
-                        <label for="sharpen">Detail / sharpening</label>
-                        <input id="sharpen" type="range" min="0" max="100" value="35" />
-                    </div>
+          <div>
+            <label><input id="stampOn" type="checkbox" checked /> Add date stamp</label>
+            <div class="row">
+              <input id="stampText" type="text" value="" />
+              <button id="setToday" class="btn">Today</button>
+            </div>
+            <div class="small">Tip: Old cams used formats like <code>2025.08.11</code> or <code>11 08 '25</code>.</div>
+          </div>
 
-                    <div>
-                        <label for="grain">Film grain</label>
-                        <input id="grain" type="range" min="0" max="100" value="18" />
-                    </div>
+          <div class="row">
+            <div>
+              <label for="quality">Export quality (JPEG)</label>
+              <input id="quality" type="range" min="50" max="100" value="92" />
+            </div>
+            <a id="download" class="btn primary" download="upscaled_nostalgic.jpg" href="#" rel="noopener" aria-disabled="true">Download</a>
+          </div>
+          <div class="small">On iOS, the image may open in a new tab; long‑press to Save Image.</div>
+        </div>
+      </section>
 
-                    <div>
-                        <label for="vignette">Vignette</label>
-                        <input id="vignette" type="range" min="0" max="100" value="28" />
-                    </div>
+      <!-- Right: Canvas / Output -->
+      <section class="card canvas-wrap">
+        <div class="meta">
+          <div class="pill" id="inMeta">Input: –</div>
+          <div class="pill" id="outMeta">Output: –</div>
+          <div class="pill" id="hint">Ready when your photo is ✨</div>
+        </div>
+        <canvas id="outCanvas" width="800" height="520" aria-label="Processed image preview"></canvas>
+        <div style="display:flex; gap:8px; justify-content:flex-end">
+          <button id="resetBtn" class="btn">Reset</button>
+        </div>
+      </section>
+    </main>
 
-                    <div>
-                        <label><input id="stampOn" type="checkbox" checked /> Add date stamp</label>
-                        <div class="row">
-                            <input id="stampText" type="text" value="" />
-                            <button id="setToday" class="btn">Today</button>
-                        </div>
-                        <div class="small">Tip: Old cams used formats like <code>2025.08.11</code> or <code>11 08 '25</code>.</div>
-                    </div>
+    <footer>All processing happens in your local browser 🌱 -benji</footer>
 
-                    <div class="row">
-                        <div>
-                            <label for="quality">Export quality (JPEG)</label>
-                            <input id="quality" type="range" min="50" max="100" value="92" />
-                        </div>
-                        <a id="download" class="btn primary" download="upscaled_nostalgic.jpg" href="#" rel="noopener" aria-disabled="true">Download</a>
-                    </div>
-                    <div class="small">On iOS, the image may open in a new tab; long‑press to Save Image.</div>
-                </div>
-            </section>
+    <script>
+      (() => {
+        const els = {
+          file: document.getElementById('file'),
+          drop: document.getElementById('drop'),
+          processBtn: document.getElementById('processBtn'),
+          resetBtn: document.getElementById('resetBtn'),
+          out: document.getElementById('outCanvas'),
+          scale: document.getElementById('scale'),
+          maxdim: document.getElementById('maxdim'),
+          intensity: document.getElementById('intensity'),
+          sharpen: document.getElementById('sharpen'),
+          grain: document.getElementById('grain'),
+          vignette: document.getElementById('vignette'),
+          stampOn: document.getElementById('stampOn'),
+          stampText: document.getElementById('stampText'),
+          setToday: document.getElementById('setToday'),
+          quality: document.getElementById('quality'),
+          download: document.getElementById('download'),
+          inMeta: document.getElementById('inMeta'),
+          outMeta: document.getElementById('outMeta'),
+          hint: document.getElementById('hint')
+        };
 
-            <!-- Right: Canvas / Output -->
-            <section class="card canvas-wrap">
-                <div class="meta">
-                    <div class="pill" id="inMeta">Input: –</div>
-                    <div class="pill" id="outMeta">Output: –</div>
-                    <div class="pill" id="hint">Ready when your photo is ✨</div>
-                </div>
-                <canvas id="outCanvas" width="800" height="520" aria-label="Processed image preview"></canvas>
-                <div style="display:flex; gap:8px; justify-content:flex-end">
-                    <button id="resetBtn" class="btn">Reset</button>
-                </div>
-            </section>
-        </main>
+        let sourceBitmap = null;
+        let sourceURL = null;
+        let downloadObjectURL = null; // blob URL we generate for download
 
-        <footer>All processing happens in your local browser 🌱 -benji</footer>
+        function setToday() {
+          const d = new Date();
+          const pad = (n) => String(n).padStart(2,'0');
+          els.stampText.value = `${d.getFullYear()}.${pad(d.getMonth()+1)}.${pad(d.getDate())}`;
+        }
+        setToday();
 
-        <script>
-            (() => {
-                const els = {
-                    file: document.getElementById('file'),
-                    drop: document.getElementById('drop'),
-                    processBtn: document.getElementById('processBtn'),
-                    resetBtn: document.getElementById('resetBtn'),
-                    out: document.getElementById('outCanvas'),
-                    scale: document.getElementById('scale'),
-                    maxdim: document.getElementById('maxdim'),
-                    intensity: document.getElementById('intensity'),
-                    sharpen: document.getElementById('sharpen'),
-                    grain: document.getElementById('grain'),
-                    vignette: document.getElementById('vignette'),
-                    stampOn: document.getElementById('stampOn'),
-                    stampText: document.getElementById('stampText'),
-                    setToday: document.getElementById('setToday'),
-                    quality: document.getElementById('quality'),
-                    download: document.getElementById('download'),
-                    inMeta: document.getElementById('inMeta'),
-                    outMeta: document.getElementById('outMeta'),
-                    hint: document.getElementById('hint'),
-                    themeBtn: document.getElementById('themeBtn'),
-                    root: document.documentElement
-                };
+        // Prevent clicking download when disabled
+        els.download.addEventListener('click', (e)=>{
+          if (els.download.getAttribute('aria-disabled') === 'true') {
+            e.preventDefault();
+          }
+        });
 
-                // THEME: light by default, remember preference
-                const savedTheme = localStorage.getItem('nfu_theme');
-                if (savedTheme === 'dark') {
-                    els.root.setAttribute('data-theme', 'dark');
-                    els.themeBtn.textContent = '🌙 Dark';
-                    els.themeBtn.setAttribute('aria-pressed', 'true');
-                } else {
-                    els.root.setAttribute('data-theme', 'light');
-                    els.themeBtn.textContent = '☀️ Light';
-                    els.themeBtn.setAttribute('aria-pressed', 'false');
-                }
-                els.themeBtn.addEventListener('click', () => {
-                    const isDark = els.root.getAttribute('data-theme') === 'dark';
-                    els.root.setAttribute('data-theme', isDark ? 'light' : 'dark');
-                    els.themeBtn.textContent = isDark ? '☀️ Light' : '🌙 Dark';
-                    els.themeBtn.setAttribute('aria-pressed', (!isDark).toString());
-                    localStorage.setItem('nfu_theme', isDark ? 'light' : 'dark');
-                });
+        // iOS/Safari fallback: if download attr unsupported, open in new tab
+        const supportsDownloadAttr = 'download' in HTMLAnchorElement.prototype;
+        if (!supportsDownloadAttr) {
+          els.download.addEventListener('click', (e)=>{
+            if (els.download.getAttribute('aria-disabled') === 'true') return;
+            if (downloadObjectURL) {
+              e.preventDefault();
+              window.open(downloadObjectURL, '_blank', 'noopener');
+            }
+          });
+        }
 
-                let sourceBitmap = null;
-                let sourceURL = null;
-                let downloadObjectURL = null; // blob URL we generate for download
+        // Drag & Drop wiring
+        ['dragover','dragenter'].forEach(ev => els.drop.addEventListener(ev, (e)=>{ e.preventDefault(); els.drop.classList.add('dragover'); }));
+        ['dragleave','drop'].forEach(ev => els.drop.addEventListener(ev, (e)=>{ e.preventDefault(); els.drop.classList.remove('dragover'); }));
+        els.drop.addEventListener('drop', (e)=>{
+          const file = e.dataTransfer.files && e.dataTransfer.files[0];
+          if (file) handleFile(file);
+        });
+        els.drop.addEventListener('click', ()=> els.file.click());
+        els.file.addEventListener('change', ()=>{
+          if (els.file.files && els.file.files[0]) handleFile(els.file.files[0]);
+        });
 
-                function setToday() {
-                    const d = new Date();
-                    const pad = (n) => String(n).padStart(2,'0');
-                    els.stampText.value = `${d.getFullYear()}.${pad(d.getMonth()+1)}.${pad(d.getDate())}`;
-                }
-                setToday();
+        els.processBtn.addEventListener('click', processImage);
+        els.resetBtn.addEventListener('click', resetAll);
+        els.setToday.addEventListener('click', (e)=>{ e.preventDefault(); setToday(); });
 
-                // Prevent clicking download when disabled
-                els.download.addEventListener('click', (e)=>{
-                    if (els.download.getAttribute('aria-disabled') === 'true') {
-                        e.preventDefault();
-                    }
-                });
+        function resetAll(){
+          sourceBitmap = null;
+          if (sourceURL) URL.revokeObjectURL(sourceURL);
+          sourceURL = null;
+          if (downloadObjectURL) URL.revokeObjectURL(downloadObjectURL);
+          downloadObjectURL = null;
+          els.file.value = '';
+          els.processBtn.disabled = true;
+          els.download.href = '#';
+          els.download.setAttribute('aria-disabled','true');
+          const ctx = els.out.getContext('2d');
+          ctx.setTransform(1,0,0,1,0,0);
+          ctx.clearRect(0,0,els.out.width, els.out.height);
+          els.inMeta.textContent = 'Input: –';
+          els.outMeta.textContent = 'Output: –';
+          els.hint.textContent = 'Ready when your photo is ✨';
+          setToday();
+        }
 
-                // iOS/Safari fallback: if download attr unsupported, open in new tab
-                const supportsDownloadAttr = 'download' in HTMLAnchorElement.prototype;
-                if (!supportsDownloadAttr) {
-                    els.download.addEventListener('click', (e)=>{
-                        if (els.download.getAttribute('aria-disabled') === 'true') return;
-                        if (downloadObjectURL) {
-                            e.preventDefault();
-                            window.open(downloadObjectURL, '_blank', 'noopener');
-                        }
-                    });
-                }
+        async function handleFile(file){
+          if (!file || !file.type.startsWith('image/')) return;
+          els.hint.textContent = 'Loading image…';
+          sourceURL = URL.createObjectURL(file);
+          try {
+            sourceBitmap = await createImageBitmap(file);
+          } catch (err) {
+            sourceBitmap = await new Promise((resolve, reject)=>{
+              const img = new Image();
+              img.onload = ()=> resolve(img);
+              img.onerror = reject;
+              img.src = sourceURL;
+            });
+          }
+          els.processBtn.disabled = false;
+          els.hint.textContent = 'Image loaded. Tweak settings and press Process.';
+          els.inMeta.textContent = `Input: ${sourceBitmap.width}×${sourceBitmap.height}`;
+        }
 
-                // Drag & Drop wiring
-                ['dragover','dragenter'].forEach(ev => els.drop.addEventListener(ev, (e)=>{ e.preventDefault(); els.drop.classList.add('dragover'); }));
-                ['dragleave','drop'].forEach(ev => els.drop.addEventListener(ev, (e)=>{ e.preventDefault(); els.drop.classList.remove('dragover'); }));
-                els.drop.addEventListener('drop', (e)=>{
-                    const file = e.dataTransfer.files && e.dataTransfer.files[0];
-                    if (file) handleFile(file);
-                });
-                els.drop.addEventListener('click', ()=> els.file.click());
-                els.file.addEventListener('change', ()=>{
-                    if (els.file.files && els.file.files[0]) handleFile(els.file.files[0]);
-                });
+        function limitScale(w, h, desiredScale, maxDim){
+          let s = desiredScale;
+          if (w*s > maxDim || h*s > maxDim) s = Math.min(maxDim / w, maxDim / h);
+          return Math.max(0.1, s);
+        }
 
-                els.processBtn.addEventListener('click', processImage);
-                els.resetBtn.addEventListener('click', resetAll);
-                els.setToday.addEventListener('click', (e)=>{ e.preventDefault(); setToday(); });
+        // Convolution (for sharpening)
+        function sharpenOnCanvas(canvas, strength){
+          if (strength <= 0) return;
+          const ctx = canvas.getContext('2d');
+          const {width:w, height:h} = canvas;
+          const src = ctx.getImageData(0,0,w,h);
+          const dst = ctx.createImageData(w,h);
+          const s = strength; // 0..1
+          const k = [0,-s,0,-s,1+4*s,-s,0,-s,0];
+          const sw = w*4; // stride
+          for (let y=1; y<h-1; y++){
+            for (let x=1; x<w-1; x++){
+              let r=0,g=0,b=0,a=0;
+              let i = (y*w + x)*4;
+              const idx = [
+                i - sw - 4, i - sw, i - sw + 4,
+                i - 4,     i,      i + 4,
+                i + sw - 4, i + sw, i + sw + 4
+              ];
+              for (let j=0;j<9;j++){
+                const ii = idx[j];
+                r += src.data[ii]   * k[j];
+                g += src.data[ii+1] * k[j];
+                b += src.data[ii+2] * k[j];
+                a += src.data[ii+3] * (j===4 ? 1 : 0);
+              }
+              dst.data[i]   = Math.max(0, Math.min(255, r));
+              dst.data[i+1] = Math.max(0, Math.min(255, g));
+              dst.data[i+2] = Math.max(0, Math.min(255, b));
+              dst.data[i+3] = a || 255;
+            }
+          }
+          ctx.putImageData(dst,0,0);
+        }
 
-                function resetAll(){
-                    sourceBitmap = null;
-                    if (sourceURL) URL.revokeObjectURL(sourceURL);
-                    sourceURL = null;
-                    if (downloadObjectURL) URL.revokeObjectURL(downloadObjectURL);
-                    downloadObjectURL = null;
-                    els.file.value = '';
-                    els.processBtn.disabled = true;
-                    els.download.href = '#';
-                    els.download.setAttribute('aria-disabled','true');
-                    const ctx = els.out.getContext('2d');
-                    ctx.setTransform(1,0,0,1,0,0);
-                    ctx.clearRect(0,0,els.out.width, els.out.height);
-                    els.inMeta.textContent = 'Input: –';
-                    els.outMeta.textContent = 'Output: –';
-                    els.hint.textContent = 'Ready when your photo is ✨';
-                    setToday();
-                }
+        function drawVignette(ctx, w, h, amount){
+          if (amount <= 0) return;
+          const rad = Math.hypot(w,h)/1.2;
+          const g = ctx.createRadialGradient(w/2, h/2, rad*0.25, w/2, h/2, rad);
+          g.addColorStop(0, 'rgba(0,0,0,0)');
+          g.addColorStop(1, `rgba(0,0,0,${amount})`);
+          ctx.save(); ctx.globalCompositeOperation = 'multiply'; ctx.fillStyle = g; ctx.fillRect(0,0,w,h); ctx.restore();
+        }
 
-                async function handleFile(file){
-                    if (!file || !file.type.startsWith('image/')) return;
-                    els.hint.textContent = 'Loading image…';
-                    sourceURL = URL.createObjectURL(file);
-                    try {
-                        sourceBitmap = await createImageBitmap(file);
-                    } catch (err) {
-                        sourceBitmap = await new Promise((resolve, reject)=>{
-                            const img = new Image();
-                            img.onload = ()=> resolve(img);
-                            img.onerror = reject;
-                            img.src = sourceURL;
-                        });
-                    }
-                    els.processBtn.disabled = false;
-                    els.hint.textContent = 'Image loaded. Tweak settings and press Process.';
-                    els.inMeta.textContent = `Input: ${sourceBitmap.width}×${sourceBitmap.height}`;
-                }
+        function drawFlashBloom(ctx, w, h, amount){
+          if (amount <= 0) return;
+          const cx = w*0.28, cy = h*0.22; // top-left bias
+          const maxR = Math.max(w,h);
+          const g = ctx.createRadialGradient(cx, cy, 2, cx, cy, maxR*0.7);
+          g.addColorStop(0, `rgba(255,255,255,${0.35*amount})`);
+          g.addColorStop(1, 'rgba(255,255,255,0)');
+          ctx.save(); ctx.globalCompositeOperation = 'lighter'; ctx.fillStyle = g; ctx.fillRect(0,0,w,h); ctx.restore();
+        }
 
-                function limitScale(w, h, desiredScale, maxDim){
-                    let s = desiredScale;
-                    if (w*s > maxDim || h*s > maxDim) s = Math.min(maxDim / w, maxDim / h);
-                    return Math.max(0.1, s);
-                }
+        function drawFilmGrain(ctx, w, h, amount){
+          if (amount <= 0) return;
+          const tile = 220;
+          const noise = document.createElement('canvas');
+          noise.width = tile; noise.height = tile;
+          const nctx = noise.getContext('2d');
+          const id = nctx.createImageData(tile, tile);
+          for (let i=0;i<id.data.length;i+=4){
+            const n = (Math.random()*255)|0;
+            id.data[i] = id.data[i+1] = id.data[i+2] = n;
+            id.data[i+3] = 255;
+          }
+          nctx.putImageData(id,0,0);
+          const pattern = nctx.createPattern ? nctx.createPattern(noise,'repeat') : null;
+          const ctxPattern = pattern || els.out.getContext('2d').createPattern(noise,'repeat');
+          const ctx2 = els.out.getContext('2d');
+          ctx2.save();
+          ctx2.globalAlpha = amount * 0.35;
+          const ops = ['soft-light','overlay','multiply','normal'];
+          for (const op of ops){ try { ctx2.globalCompositeOperation = op; break; } catch(e){} }
+          ctx2.fillStyle = ctxPattern;
+          ctx2.fillRect(0,0,w,h);
+          ctx2.restore();
+        }
 
-                // Convolution (for sharpening)
-                function sharpenOnCanvas(canvas, strength){
-                    if (strength <= 0) return;
-                    const ctx = canvas.getContext('2d');
-                    const {width:w, height:h} = canvas;
-                    const src = ctx.getImageData(0,0,w,h);
-                    const dst = ctx.createImageData(w,h);
-                    const s = strength; // 0..1
-                    const k = [0,-s,0,-s,1+4*s,-s,0,-s,0];
-                    const sw = w*4; // stride
-                    for (let y=1; y<h-1; y++){
-                        for (let x=1; x<w-1; x++){
-                            let r=0,g=0,b=0,a=0;
-                            let i = (y*w + x)*4;
-                            const idx = [
-                                i - sw - 4, i - sw, i - sw + 4,
-                                i - 4,     i,      i + 4,
-                                i + sw - 4, i + sw, i + sw + 4
-                            ];
-                            for (let j=0;j<9;j++){
-                                const ii = idx[j];
-                                r += src.data[ii]   * k[j];
-                                g += src.data[ii+1] * k[j];
-                                b += src.data[ii+2] * k[j];
-                                a += src.data[ii+3] * (j===4 ? 1 : 0);
-                            }
-                            dst.data[i]   = Math.max(0, Math.min(255, r));
-                            dst.data[i+1] = Math.max(0, Math.min(255, g));
-                            dst.data[i+2] = Math.max(0, Math.min(255, b));
-                            dst.data[i+3] = a || 255;
-                        }
-                    }
-                    ctx.putImageData(dst,0,0);
-                }
+        function applyColorMood(canvas, amount){
+          const ctx = canvas.getContext('2d');
+          const tmp = document.createElement('canvas'); tmp.width = canvas.width; tmp.height = canvas.height;
+          const tctx = tmp.getContext('2d');
+          const warm = 0.15 + amount*0.20;
+          const sat  = 1.05 + amount*0.20;
+          const cntr = 1.05 + amount*0.12;
+          tctx.filter = `sepia(${warm}) saturate(${sat}) contrast(${cntr})`;
+          tctx.drawImage(canvas,0,0);
+          ctx.clearRect(0,0,canvas.width, canvas.height);
+          ctx.drawImage(tmp,0,0);
+        }
 
-                function drawVignette(ctx, w, h, amount){
-                    if (amount <= 0) return;
-                    const rad = Math.hypot(w,h)/1.2;
-                    const g = ctx.createRadialGradient(w/2, h/2, rad*0.25, w/2, h/2, rad);
-                    g.addColorStop(0, 'rgba(0,0,0,0)');
-                    g.addColorStop(1, `rgba(0,0,0,${amount})`);
-                    ctx.save(); ctx.globalCompositeOperation = 'multiply'; ctx.fillStyle = g; ctx.fillRect(0,0,w,h); ctx.restore();
-                }
+        function drawDateStamp(ctx, w, h, text){
+          if (!text) return;
+          ctx.save();
+          const pad = Math.max(10, Math.round(Math.max(w,h)*0.012));
+          const size = Math.max(14, Math.round(Math.max(w,h)*0.028));
+          ctx.font = `${size}px Courier, "Courier New", monospace`;
+          ctx.textBaseline = 'bottom';
+          const x = w - pad; const y = h - pad;
+          // Slight outline for readability
+          ctx.fillStyle = 'rgba(0,0,0,0.55)';
+          ctx.shadowColor = 'rgba(0,0,0,0.6)'; ctx.shadowBlur = size * 0.45;
+          ctx.textAlign = 'right'; ctx.fillText(text, x, y);
+          ctx.shadowBlur = size * 0.1; ctx.shadowColor = 'rgba(255,140,0,0.7)';
+          ctx.fillStyle = getComputedStyle(document.documentElement).getPropertyValue('--brand').trim() || 'rgb(199,81,0)';
+          ctx.fillText(text, x, y);
+          ctx.restore();
+        }
 
-                function drawFlashBloom(ctx, w, h, amount){
-                    if (amount <= 0) return;
-                    const cx = w*0.28, cy = h*0.22; // top-left bias
-                    const maxR = Math.max(w,h);
-                    const g = ctx.createRadialGradient(cx, cy, 2, cx, cy, maxR*0.7);
-                    g.addColorStop(0, `rgba(255,255,255,${0.35*amount})`);
-                    g.addColorStop(1, 'rgba(255,255,255,0)');
-                    ctx.save(); ctx.globalCompositeOperation = 'lighter'; ctx.fillStyle = g; ctx.fillRect(0,0,w,h); ctx.restore();
-                }
+        function blobFromCanvas(canvas, quality){
+          return new Promise((resolve) => {
+            if (canvas.toBlob) {
+              canvas.toBlob((b)=> resolve(b), 'image/jpeg', quality);
+            } else {
+              // Older Safari fallback
+              const dataURL = canvas.toDataURL('image/jpeg', quality);
+              const byteString = atob(dataURL.split(',')[1]);
+              const mimeString = dataURL.split(',')[0].split(':')[1].split(';')[0];
+              const ab = new ArrayBuffer(byteString.length);
+              const ia = new Uint8Array(ab);
+              for (let i = 0; i < byteString.length; i++) ia[i] = byteString.charCodeAt(i);
+              resolve(new Blob([ab], {type: mimeString}));
+            }
+          });
+        }
 
-                function drawFilmGrain(ctx, w, h, amount){
-                    if (amount <= 0) return;
-                    const tile = 220;
-                    const noise = document.createElement('canvas');
-                    noise.width = tile; noise.height = tile;
-                    const nctx = noise.getContext('2d');
-                    const id = nctx.createImageData(tile, tile);
-                    for (let i=0;i<id.data.length;i+=4){
-                        const n = (Math.random()*255)|0;
-                        id.data[i] = id.data[i+1] = id.data[i+2] = n;
-                        id.data[i+3] = 255;
-                    }
-                    nctx.putImageData(id,0,0);
-                    const pattern = nctx.createPattern ? nctx.createPattern(noise,'repeat') : null;
-                    const ctxPattern = pattern || els.out.getContext('2d').createPattern(noise,'repeat');
-                    const ctx2 = els.out.getContext('2d');
-                    ctx2.save();
-                    ctx2.globalAlpha = amount * 0.35;
-                    const ops = ['soft-light','overlay','multiply','normal'];
-                    for (const op of ops){ try { ctx2.globalCompositeOperation = op; break; } catch(e){} }
-                    ctx2.fillStyle = ctxPattern;
-                    ctx2.fillRect(0,0,w,h);
-                    ctx2.restore();
-                }
+        async function updateDownloadLink(){
+          const q = Math.min(1, Math.max(0.5, (parseInt(els.quality.value,10)||92)/100));
+          const blob = await blobFromCanvas(els.out, q);
+          if (!blob) return;
+          if (downloadObjectURL) URL.revokeObjectURL(downloadObjectURL);
+          downloadObjectURL = URL.createObjectURL(blob);
+          els.download.href = downloadObjectURL;
+          els.download.setAttribute('aria-disabled','false');
+        }
 
-                function applyColorMood(canvas, amount){
-                    const ctx = canvas.getContext('2d');
-                    const tmp = document.createElement('canvas'); tmp.width = canvas.width; tmp.height = canvas.height;
-                    const tctx = tmp.getContext('2d');
-                    const warm = 0.15 + amount*0.20;
-                    const sat  = 1.05 + amount*0.20;
-                    const cntr = 1.05 + amount*0.12;
-                    tctx.filter = `sepia(${warm}) saturate(${sat}) contrast(${cntr})`;
-                    tctx.drawImage(canvas,0,0);
-                    ctx.clearRect(0,0,canvas.width, canvas.height);
-                    ctx.drawImage(tmp,0,0);
-                }
+        async function processImage(){
+          if (!sourceBitmap) return;
+          els.processBtn.disabled = true;
+          const out = els.out;
+          const octx = out.getContext('2d');
+          const desiredScale = parseFloat(els.scale.value);
+          const maxDim = Math.max(512, parseInt(els.maxdim.value || '4096', 10));
+          const intensity = (parseInt(els.intensity.value,10) || 0) / 100; // 0..1
+          const sharpenAmt = (parseInt(els.sharpen.value,10) || 0) / 100; // 0..1
+          const grainAmt = (parseInt(els.grain.value,10) || 0) / 100; // 0..1
+          const vignAmt = (parseInt(els.vignette.value,10) || 0) / 100; // 0..1
 
-                function drawDateStamp(ctx, w, h, text){
-                    if (!text) return;
-                    ctx.save();
-                    const pad = Math.max(10, Math.round(Math.max(w,h)*0.012));
-                    const size = Math.max(14, Math.round(Math.max(w,h)*0.028));
-                    ctx.font = `${size}px Courier, "Courier New", monospace`;
-                    ctx.textBaseline = 'bottom';
-                    const x = w - pad; const y = h - pad;
-                    // Slight outline for readability across themes
-                    ctx.fillStyle = 'rgba(0,0,0,0.55)';
-                    ctx.shadowColor = 'rgba(0,0,0,0.6)'; ctx.shadowBlur = size * 0.45;
-                    ctx.textAlign = 'right'; ctx.fillText(text, x, y);
-                    ctx.shadowBlur = size * 0.1; ctx.shadowColor = 'rgba(255,140,0,0.7)';
-                    ctx.fillStyle = getComputedStyle(document.documentElement).getPropertyValue('--brand').trim() || 'rgb(199,81,0)';
-                    ctx.fillText(text, x, y);
-                    ctx.restore();
-                }
+          const scale = limitScale(sourceBitmap.width, sourceBitmap.height, desiredScale, maxDim);
+          const W = Math.max(1, Math.round(sourceBitmap.width * scale));
+          const H = Math.max(1, Math.round(sourceBitmap.height * scale));
+          out.width = W; out.height = H;
 
-                function blobFromCanvas(canvas, quality){
-                    return new Promise((resolve) => {
-                        if (canvas.toBlob) {
-                            canvas.toBlob((b)=> resolve(b), 'image/jpeg', quality);
-                        } else {
-                            // Older Safari fallback
-                            const dataURL = canvas.toDataURL('image/jpeg', quality);
-                            const byteString = atob(dataURL.split(',')[1]);
-                            const mimeString = dataURL.split(',')[0].split(':')[1].split(';')[0];
-                            const ab = new ArrayBuffer(byteString.length);
-                            const ia = new Uint8Array(ab);
-                            for (let i = 0; i < byteString.length; i++) ia[i] = byteString.charCodeAt(i);
-                            resolve(new Blob([ab], {type: mimeString}));
-                        }
-                    });
-                }
+          octx.imageSmoothingEnabled = true; try { octx.imageSmoothingQuality = 'high'; } catch(e) {}
+          octx.clearRect(0,0,W,H);
+          octx.drawImage(sourceBitmap, 0,0, sourceBitmap.width, sourceBitmap.height, 0,0, W,H);
 
-                async function updateDownloadLink(){
-                    const q = Math.min(1, Math.max(0.5, (parseInt(els.quality.value,10)||92)/100));
-                    const blob = await blobFromCanvas(els.out, q);
-                    if (!blob) return;
-                    if (downloadObjectURL) URL.revokeObjectURL(downloadObjectURL);
-                    downloadObjectURL = URL.createObjectURL(blob);
-                    els.download.href = downloadObjectURL;
-                    els.download.setAttribute('aria-disabled','false');
-                }
+          applyColorMood(out, intensity*0.25);
+          if (sharpenAmt > 0.01) { sharpenOnCanvas(out, 0.8 * sharpenAmt + 0.05); }
+          drawFlashBloom(octx, W, H, intensity);
+          drawVignette(octx, W, H, vignAmt * 0.7);
+          drawFilmGrain(octx, W, H, grainAmt);
+          applyColorMood(out, 0.15 + intensity*0.15);
+          if (els.stampOn.checked) { drawDateStamp(octx, W, H, els.stampText.value.trim()); }
 
-                async function processImage(){
-                    if (!sourceBitmap) return;
-                    els.processBtn.disabled = true;
-                    const out = els.out;
-                    const octx = out.getContext('2d');
-                    const desiredScale = parseFloat(els.scale.value);
-                    const maxDim = Math.max(512, parseInt(els.maxdim.value || '4096', 10));
-                    const intensity = (parseInt(els.intensity.value,10) || 0) / 100; // 0..1
-                    const sharpenAmt = (parseInt(els.sharpen.value,10) || 0) / 100; // 0..1
-                    const grainAmt = (parseInt(els.grain.value,10) || 0) / 100; // 0..1
-                    const vignAmt = (parseInt(els.vignette.value,10) || 0) / 100; // 0..1
+          els.outMeta.textContent = `Output: ${W}×${H}`;
+          els.hint.textContent = 'Done. Download when ready.';
 
-                    const scale = limitScale(sourceBitmap.width, sourceBitmap.height, desiredScale, maxDim);
-                    const W = Math.max(1, Math.round(sourceBitmap.width * scale));
-                    const H = Math.max(1, Math.round(sourceBitmap.height * scale));
-                    out.width = W; out.height = H;
+          await updateDownloadLink();
+          els.processBtn.disabled = false;
+        }
 
-                    octx.imageSmoothingEnabled = true; try { octx.imageSmoothingQuality = 'high'; } catch(e) {}
-                    octx.clearRect(0,0,W,H);
-                    octx.drawImage(sourceBitmap, 0,0, sourceBitmap.width, sourceBitmap.height, 0,0, W,H);
+        // Regenerate the blob URL when changing quality
+        els.quality.addEventListener('input', ()=>{
+          if (!els.out.width || !els.out.height) return;
+          updateDownloadLink();
+        });
 
-                    applyColorMood(out, intensity*0.25);
-                    if (sharpenAmt > 0.01) { sharpenOnCanvas(out, 0.8 * sharpenAmt + 0.05); }
-                    drawFlashBloom(octx, W, H, intensity);
-                    drawVignette(octx, W, H, vignAmt * 0.7);
-                    drawFilmGrain(octx, W, H, grainAmt);
-                    applyColorMood(out, 0.15 + intensity*0.15);
-                    if (els.stampOn.checked) { drawDateStamp(octx, W, H, els.stampText.value.trim()); }
-
-                    els.outMeta.textContent = `Output: ${W}×${H}`;
-                    els.hint.textContent = 'Done. Download when ready.';
-
-                    await updateDownloadLink();
-                    els.processBtn.disabled = false;
-                }
-
-                // Regenerate the blob URL when changing quality
-                els.quality.addEventListener('input', ()=>{
-                    if (!els.out.width || !els.out.height) return;
-                    updateDownloadLink();
-                });
-
-            })();
-        </script>
-    </body>
+      })();
+    </script>
+  </body>
 </html>
 
